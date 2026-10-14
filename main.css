@@ -1,0 +1,46 @@
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.text-container {
+    flex: 1;
+    background-color: darkslategray;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    background-color: dimgrey;
+    align-items: center;
+}
+
+.choice-btn {
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.choice-btn:active {
+    background-color: #EEEEEE;
+}
+
+.textbox {
+    width: 80%;
+}
