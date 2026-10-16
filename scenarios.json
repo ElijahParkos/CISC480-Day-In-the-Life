@@ -1,0 +1,23 @@
+{
+     "Scenario0": {
+        "Text": "Today is move-in day, but you forgot to buy furniture for your dorm room.",
+        "Choice1": "Buy cheap furniture since it's only for college.",
+        "Choice2": "Use Facebook Marketplace.",
+        "Choice3": "Buy high quality new furniture you plan to keep after college.",
+        "Choice4": "Ask friends and family for unwanted furniture."
+    },
+    "Scenario1": {
+        "Text": "You moved in and finished unpacking all your stuff. What will you do with the boxes?",
+        "Choice1": "Throw all the packaging into the garbage. It takes too long to sort and most of it doesn't get recycled anyways.",
+        "Choice2": "Break down cardboard and recyclable materials.",
+        "Choice3": "Save boxes and packaging materials for future moving in/out.",
+        "Choice4": "Leave materials in the hallway for someone else who knows better how to handle them."
+    },
+    "Scenario2": {
+        "Text": "After unpacking everything, you realized that you forgot a couple items.",
+        "Choice1": "Make a separate car trip to the store to purchase forgotten items.",
+        "Choice2": "Ask a friend to borrow items, and purchase anything else on the next errand run.",
+        "Choice3": "Coordinate a shopping trip with roommates or a group of friends.",
+        "Choice4": "Order everything online with express shipping."
+    }
+}
