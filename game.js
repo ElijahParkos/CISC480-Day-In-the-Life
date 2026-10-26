@@ -12,7 +12,7 @@ choice3_btn.addEventListener('click', progressScenario);
 choice4_btn.addEventListener('click', progressScenario);
 
 let scenario = 0;
-// score keeper
+// score keeper for each level of sustainability
 let counts = { low: 0, mid: 0, high: 0 };
 function progressScenario() {
     scenario++;
