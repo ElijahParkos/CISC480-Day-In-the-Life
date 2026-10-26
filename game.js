@@ -27,13 +27,15 @@ function recordScore(event) {
     const i = Number(event.target.id.replace('choice', '')) - 1;
     counts[scenarios[scenario - 1].options[i].level]++;
 
-    // show the result after last scenario
+    // after the last scenario, add up the points
     if (scenario === scenarios.length) {
-        let overall = 'Mid impact';
-        if (counts.low > scenarios.length / 2) overall = 'Lower impact';
-        if (counts.high > scenarios.length / 2) overall = 'Higher impact';
+        const total = counts.low * 3 + counts.mid * 2 + counts.high * 1;
+        // category names will be changed when we decide and ranges can be adjusted
+        let category = 'Most sustainable';                      // 12-15
+        if (total <= 7) category = 'Least sustainable';         // <7
+        else if (total <= 11) category = 'Somewhat sustainable'; // 8-11
 
-        textbox.textContent = `Your day: ${overall}`;
+        textbox.textContent = category;
     }
 }
 
