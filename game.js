@@ -11,34 +11,55 @@ choice2_btn.addEventListener('click', progressScenario);
 choice3_btn.addEventListener('click', progressScenario);
 choice4_btn.addEventListener('click', progressScenario);
 
-let scenario = 0;
-// score keeper for each level of sustainability
-let counts = { low: 0, mid: 0, high: 0 };
-function progressScenario() {
-    scenario++;
-    textbox.textContent = `Scenario ${scenario+1}`;
-    choice1_btn.textContent = `Choice ${scenario*4+1}`
-    choice2_btn.textContent = `Choice ${scenario*4+2}`
-    choice3_btn.textContent = `Choice ${scenario*4+3}`
-    choice4_btn.textContent = `Choice ${scenario*4+4}`
+let scenarios = {};   // loaded from scenarios.json
+let current = null;   // id of the scenario on screen
+
+fetch('./scenarios.json')
+    .then((res) => res.json())
+    .then((data) => {
+        scenarios = data.scenarios;
+        showScenario(data.start);
+    });
+
+function showScenario(id) {
+    current = id;
+    const s = scenarios[id];
+    textbox.textContent = s.text;
+    choice1_btn.textContent = s.options[0].text;
+    choice2_btn.textContent = s.options[1].text;
+    choice3_btn.textContent = s.options[2].text;
+    choice4_btn.textContent = s.options[3].text;
 }
 
-function recordScore(event) {
+function progressScenario(event) {
     const i = Number(event.target.id.replace('choice', '')) - 1;
-    counts[scenarios[scenario - 1].options[i].level]++;
+    const option = scenarios[current].options[i];
 
-    // after the last scenario, add up the points
-    if (scenario === scenarios.length) {
-        const total = counts.low * 3 + counts.mid * 2 + counts.high * 1;
-        // category names will be changed when we decide and ranges can be adjusted
-        let category = 'Most sustainable';                      // 12-15
-        if (total <= 7) category = 'Least sustainable';         // <7
-        else if (total <= 11) category = 'Somewhat sustainable'; // 8-11
+    scoreChoice(option);
 
-        textbox.textContent = category;
+    if (option.next) {
+        showScenario(option.next);
+    } else {
+        textbox.textContent = getCategory();
     }
 }
 
-[choice1_btn, choice2_btn, choice3_btn, choice4_btn].forEach((btn) =>
-    btn.addEventListener('click', recordScore)
-);
+// Scoring
+// Score keeper for each level of sustainability
+let counts = { low: 0, mid: 0, high: 0 };
+
+// call with the option the player picked
+function scoreChoice(option) {
+    counts[option.level]++;
+}
+
+// call when the end of a path is reached
+function getCategory() {
+    const answered = counts.low + counts.mid + counts.high;
+    if (answered === 0) return '';
+    const average = (counts.low * 1 + counts.mid * 2 + counts.high * 3) / answered;
+    // category names can be changed when and cutoffs can be adjusted
+    if (average >= 2.4) return 'Most sustainable';
+    if (average >= 1.6) return 'Somewhat sustainable';
+    return 'Least sustainable';
+}
