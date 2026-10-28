@@ -17,28 +17,28 @@ let current = null;   // id of the scenario on screen
 fetch('./scenarios.json')
     .then((res) => res.json())
     .then((data) => {
-        scenarios = data.scenarios;
-        showScenario(data.start);
+        scenarios = data;
+        showScenario(data.Start);
     });
 
 function showScenario(id) {
     current = id;
     const s = scenarios[id];
-    textbox.textContent = s.text;
-    choice1_btn.textContent = s.options[0].text;
-    choice2_btn.textContent = s.options[1].text;
-    choice3_btn.textContent = s.options[2].text;
-    choice4_btn.textContent = s.options[3].text;
+
+    textbox.textContent = s.Text;
+    choice1_btn.textContent = s.Options[0].Text;
+    choice2_btn.textContent = s.Options[1].Text;
+    choice3_btn.textContent = s.Options[2].Text;
+    choice4_btn.textContent = s.Options[3].Text;
 }
 
 function progressScenario(event) {
     const i = Number(event.target.id.replace('choice', '')) - 1;
-    const option = scenarios[current].options[i];
+    const option = scenarios[current].Options[i];
 
     scoreChoice(option);
-
-    if (option.next) {
-        showScenario(option.next);
+    if (option.Next) {
+        showScenario(option.Next);
     } else {
         textbox.textContent = getCategory();
     }

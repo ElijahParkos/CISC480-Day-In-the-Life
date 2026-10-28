@@ -1,122 +1,162 @@
 {
-     "Scenario0": { 
-        "_comment": "Branch 1: Move-In Day",
-        "Text": "Today is move-in day, but you forgot to buy furniture for your dorm room.",
-        "Choice1": "Buy cheap furniture since it's only for college.",
-        "Choice2": "Use Facebook Marketplace.",
-        "Choice3": "Buy high quality new furniture you plan to keep after college.",
-        "Choice4": "Ask friends and family for unwanted furniture."
+    "Start": "Day_Selection",
+    "Day_Selection": {
+        "Text": "You're a UST student, what will you do today?",
+        "Options" : [
+            {"Choice1": "Today is Move-In Day!", "Next": "Scenario1"},
+            {"Choice2": "Today is Move-In Day!", "Next": "Scenario5"},
+            {"Choice3": "Today is a regular Sunday-reset day!", "Next": "Scenario10"},
+            {"Choice4": "", "Next": "Scenario10"}
+        ]
     },
-    "Scenario1": {
-        "_comment": "Branch 1: Move-In Day",
-        "Text": "You moved in and finished unpacking all your stuff. What will you do with the boxes?",
-        "Choice1": "Throw all the packaging into the garbage. It takes too long to sort and most of it doesn't get recycled anyways.",
-        "Choice2": "Break down cardboard and recyclable materials.",
-        "Choice3": "Save boxes and packaging materials for future moving in/out.",
-        "Choice4": "Leave materials in the hallway for someone else who knows better how to handle them."
+    "Scenario1": { 
+        "Day_Type": "Move-In",
+        "Text": "Today is move-in day, but you forgot to buy furniture for your dorm room.",
+        "Options" : [
+            {"Choice1": "Buy cheap furniture since it's only for college.", "Next": "Scenario2"},
+            {"Choice2": "Use Facebook Marketplace.", "Next": "Scenario2"},
+            {"Choice3": "Buy high quality new furniture you plan to keep after college.", "Next": "Scenario2"},
+            {"Choice4": "Ask friends and family for unwanted furniture.", "Next": "Scenario2"}
+        ]
     },
     "Scenario2": {
-        "_comment": "Branch 1: Move-In Day",
-        "Text": "After unpacking everything, you realized that you forgot a couple items.",
-        "Choice1": "Make a separate car trip to the store to purchase forgotten items.",
-        "Choice2": "Ask a friend to borrow items, and purchase anything else on the next errand run.",
-        "Choice3": "Coordinate a shopping trip with roommates or a group of friends.",
-        "Choice4": "Order everything online with express shipping."
+        "Day_Type": "Move-In",
+        "Text": "You moved in and finished unpacking all your stuff. What will you do with the boxes?",
+        "Options" : [
+            {"Choice1": "Throw all the packaging into the garbage. It takes too long to sort and most of it doesn't get recycled anyways.", "Next": "Scenario3"},
+            {"Choice2": "Break down cardboard and recyclable materials.", "Next": "Scenario3"},
+            {"Choice3": "Save boxes and packaging materials for future moving in/out.", "Next": "Scenario3"},
+            {"Choice4": "Leave materials in the hallway for someone else who knows better how to handle them.", "Next": "Scenario3"}
+        ]
     },
     "Scenario3": {
-        "_comment": "Branch 1: Move-In Day",
-        "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Day_Type": "Move-In",
+        "Text": "After unpacking everything, you realized that you forgot a couple items.",
+        "Options" : [
+            {"Choice1": "Make a separate car trip to the store to purchase forgotten items.", "Next": "Scenario4"},
+            {"Choice2": "Ask a friend to borrow items, and purchase anything else on the next errand run.", "Next": "Scenario4"},
+            {"Choice3": "Coordinate a shopping trip with roommates or a group of friends.", "Next": "Scenario4"},
+            {"Choice4": "Order everything online with express shipping.", "Next": "Scenario4"}
+        ]
     },
     "Scenario4": {
-        "_comment": "Branch 1: Move-In Day",
+        "Day_Type": "Move-In",
         "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Options" : [
+            {"Choice1": "", "Next": "Scenario5"},
+            {"Choice2": "", "Next": "Scenario5"},
+            {"Choice3": "", "Next": "Scenario5"},
+            {"Choice4": "", "Next": "Scenario5"}
+        ]
     },
     "Scenario5": {
-        "_comment": "Branch 2: Move-Out Day",
+        "Day_Type": "Move-In",
         "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Options" : [
+            {"Choice1": "", "Next": null},
+            {"Choice2": "", "Next": null},
+            {"Choice3": "", "Next": null},
+            {"Choice4": "", "Next": null}
+        ]
     },
     "Scenario6": {
-        "_comment": "Branch 2: Move-Out Day",
+        "Day_Type": "Move-Out",
         "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Options" : [
+            {"Choice1": "", "Next": "Scenario7"},
+            {"Choice2": "", "Next": "Scenario7"},
+            {"Choice3": "", "Next": "Scenario7"},
+            {"Choice4": "", "Next": "Scenario7"}
+        ]
     },
     "Scenario7": {
-        "_comment": "Branch 2: Move-Out Day",
+        "Day_Type": "Move-Out",
         "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Options" : [
+            {"Choice1": "", "Next": "Scenario8"},
+            {"Choice2": "", "Next": "Scenario8"},
+            {"Choice3": "", "Next": "Scenario8"},
+            {"Choice4": "", "Next": "Scenario8"}
+        ]
     },
     "Scenario8": {
-        "_comment": "Branch 2: Move-Out Day",
+        "Day_Type": "Move-Out",
         "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Options" : [
+            {"Choice1": "", "Next": "Scenario9"},
+            {"Choice2": "", "Next": "Scenario9"},
+            {"Choice3": "", "Next": "Scenario9"},
+            {"Choice4": "", "Next": "Scenario9"}
+        ]
     },
     "Scenario9": {
-        "_comment": "Branch 2: Move-Out Day",
+        "Day_Type": "Move-Out",
         "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Options" : [
+            {"Choice1": "", "Next": "Scenario10"},
+            {"Choice2": "", "Next": "Scenario10"},
+            {"Choice3": "", "Next": "Scenario10"},
+            {"Choice4": "", "Next": "Scenario10"}
+        ]
     },
     "Scenario10": {
-        "_comment": "Branch 3: Sunday Reset Day",
+        "Day_Type": "Move-Out",
         "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Options" : [
+            {"Choice1": "", "Next": null},
+            {"Choice2": "", "Next": null},
+            {"Choice3": "", "Next": null},
+            {"Choice4": "", "Next": null}
+        ]
     },
     "Scenario11": {
-        "_comment": "Branch 3: Sunday Reset Day",
+        "Day_Type": "Sunday",
         "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Options" : [
+            {"Choice1": "", "Next": "Scenario11"},
+            {"Choice2": "", "Next": "Scenario11"},
+            {"Choice3": "", "Next": "Scenario11"},
+            {"Choice4": "", "Next": "Scenario11"}
+        ]
     },
     "Scenario12": {
-        "_comment": "Branch 3: Sunday Reset Day",
+        "Day_Type": "Sunday",
         "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Options" : [
+            {"Choice1": "", "Next": "Scenario13"},
+            {"Choice2": "", "Next": "Scenario13"},
+            {"Choice3": "", "Next": "Scenario13"},
+            {"Choice4": "", "Next": "Scenario13"}
+        ]
     },
     "Scenario13": {
-        "_comment": "Branch 3: Sunday Reset Day",
+        "Day_Type": "Sunday",
         "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Options" : [
+            {"Choice1": "", "Next": "Scenario14"},
+            {"Choice2": "", "Next": "Scenario14"},
+            {"Choice3": "", "Next": "Scenario14"},
+            {"Choice4": "", "Next": "Scenario14"}
+        ]
     },
     "Scenario14": {
-        "_comment": "Branch 3: Sunday Reset Day",
+        "Day_Type": "Sunday",
         "Text": "",
-        "Choice1": "",
-        "Choice2": "",
-        "Choice3": "",
-        "Choice4": ""
+        "Options" : [
+            {"Choice1": "", "Next": "Scenario15"},
+            {"Choice2": "", "Next": "Scenario15"},
+            {"Choice3": "", "Next": "Scenario15"},
+            {"Choice4": "", "Next": "Scenario15"}
+        ]
+    },
+    "Scenario15": {
+        "Day_Type": "Sunday",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "", "Next": null},
+            {"Choice2": "", "Next": null},
+            {"Choice3": "", "Next": null},
+            {"Choice4": "", "Next": null}
+        ]
     }
 }
