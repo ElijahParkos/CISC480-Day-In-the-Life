@@ -41,122 +41,122 @@
     },
     "Scenario4": {
         "Day_Type": "Move-In",
-        "Text": "",
+        "Text": "You decided that the place looks a little barren... It could use some decorations!",
         "Options" : [
-            {"Choice1": "4Move-In 1", "Next": "Scenario5"},
-            {"Choice2": "4Move-In 2", "Next": "Scenario5"},
-            {"Choice3": "4Move-In 3", "Next": "Scenario5"},
-            {"Choice4": "4Move-In 4", "Next": "Scenario5"}
+            {"Choice1": "Buy new decorations for every season.", "Next": "Scenario5"},
+            {"Choice2": "DIY decorations from materials at the CreateSpace.", "Next": "Scenario5"},
+            {"Choice3": "Use old decorations from family members or Facebook Marketplace.", "Next": "Scenario5"},
+            {"Choice4": "Throw out decorations since it takes up too much space and is low quality anyways.", "Next": "Scenario5"}
         ]
     },
     "Scenario5": {
         "Day_Type": "Move-In",
-        "Text": "",
+        "Text": "You relized that you also forgot to get kitchen, cleaning, and school supplies.",
         "Options" : [
-            {"Choice1": "5Move-In 1", "Next": null},
-            {"Choice2": "5Move-In 2", "Next": null},
-            {"Choice3": "5Move-In 3", "Next": null},
-            {"Choice4": "5Move-In 4", "Next": null}
+            {"Choice1": "Buy new complete set of kitchen, cleaning, and school supplies with the intent of using in future.", "Next": null},
+            {"Choice2": "Borrow items communally that you will not use as regularly.", "Next": null},
+            {"Choice3": "Use old school supplies and kitchen items from home.", "Next": null},
+            {"Choice4": "Buy cheap and disposable items since it's only for college and you won't need it later.", "Next": null}
         ]
     },
     "Scenario6": {
         "Day_Type": "Move-Out",
-        "Text": "",
+        "Text": "The school year is over! You're moving out of your dorm room today. What do you do with all your furniture?",
         "Options" : [
-            {"Choice1": "1Move-Out 1", "Next": "Scenario7"},
-            {"Choice2": "1Move-Out 2", "Next": "Scenario7"},
-            {"Choice3": "1Move-Out 3", "Next": "Scenario7"},
-            {"Choice4": "1Move-Out 4", "Next": "Scenario7"}
+            {"Choice1": "Donate unwanted furniture to incoming students in residence halls bins.", "Next": "Scenario7"},
+            {"Choice2": "Sell unwanted furniture online or to other students.", "Next": "Scenario7"},
+            {"Choice3": "Throw away unwanted furniture because it is low quality anyways and it's too difficult to drive it anywhere.", "Next": "Scenario7"},
+            {"Choice4": "Keep furniture for next year or to bring home.", "Next": "Scenario7"}
         ]
     },
     "Scenario7": {
         "Day_Type": "Move-Out",
-        "Text": "",
+        "Text": "You still have some unopened food left in your dorm room.",
         "Options" : [
-            {"Choice1": "2Move-Out 1", "Next": "Scenario8"},
-            {"Choice2": "2Move-Out 2", "Next": "Scenario8"},
-            {"Choice3": "2Move-Out 3", "Next": "Scenario8"},
-            {"Choice4": "2Move-Out 4", "Next": "Scenario8"}
+            {"Choice1": "Throw away unopened food since it is probably old anyways and takes too long to sort through.", "Next": "Scenario8"},
+            {"Choice2": "Bring home every food item, even if you don't know if you'll use it, you might!", "Next": "Scenario8"},
+            {"Choice3": "Offer unopened items to your roommate or friends.", "Next": "Scenario8"},
+            {"Choice4": "Donate elligible unopened food in campus bins or commuter lounge.", "Next": "Scenario8"}
         ]
     },
     "Scenario8": {
         "Day_Type": "Move-Out",
-        "Text": "",
+        "Text": "As you go through your closet, you realize you have a lot more clothes than you need. You couldn't possibly take home every single article!",
         "Options" : [
-            {"Choice1": "3Move-Out 1", "Next": "Scenario9"},
-            {"Choice2": "3Move-Out 2", "Next": "Scenario9"},
-            {"Choice3": "3Move-Out 3", "Next": "Scenario9"},
-            {"Choice4": "3Move-Out 4", "Next": "Scenario9"}
+            {"Choice1": "Throw away unwanted clothes, no one would want them anyways.", "Next": "Scenario9"},
+            {"Choice2": "Donate wearable clothes to Tommie's Closet,", "Next": "Scenario9"},
+            {"Choice3": "Organize clothing exchange with friends.", "Next": "Scenario9"},
+            {"Choice4": "Go to the CreateSpace and repurpose clothing material by making an art craft or giving to createspace for other students to use.", "Next": "Scenario9"}
         ]
     },
     "Scenario9": {
         "Day_Type": "Move-Out",
-        "Text": "",
+        "Text": "After wiping down and srubbing every surface, you still have some cleaning products left.",
         "Options" : [
-            {"Choice1": "4Move-Out 1", "Next": "Scenario10"},
-            {"Choice2": "4Move-Out 2", "Next": "Scenario10"},
-            {"Choice3": "4Move-Out 3", "Next": "Scenario10"},
-            {"Choice4": "4Move-Out 4", "Next": "Scenario10"}
+            {"Choice1": "Dump out remnants of household products so you can reuse bottles.", "Next": "Scenario10"},
+            {"Choice2": "Offer usable products to friends or family.", "Next": "Scenario10"},
+            {"Choice3": "Pack everything to bring home even if you might not need it.", "Next": "Scenario10"},
+            {"Choice4": "You are in a rush so just throw it away, not a big deal.", "Next": "Scenario10"}
         ]
     },
     "Scenario10": {
         "Day_Type": "Move-Out",
-        "Text": "",
+        "Text": "Now that your dorm room is cleaned out, there's just one more thing to deal with: all your notes and school supplies from this year!",
         "Options" : [
-            {"Choice1": "5Move-Out 1", "Next": null},
-            {"Choice2": "5Move-Out 2", "Next": null},
-            {"Choice3": "5Move-Out 3", "Next": null},
-            {"Choice4": "5Move-Out 4", "Next": null}
+            {"Choice1": "Throw away old notebooks and class materials, you wont need it anymore.", "Next": null},
+            {"Choice2": "Recycle used pages and save blank pages in notebook for future use.", "Next": null},
+            {"Choice3": "Offer books or supplies to professor for future students in that class.", "Next": null},
+            {"Choice4": "Keep all notes for future reference.", "Next": null}
         ]
     },
     "Scenario11": {
         "Day_Type": "Sunday",
-        "Text": "",
+        "Text": "Today is Sunday, and you're running low on groceries.",
         "Options" : [
-            {"Choice1": "1Sunday 1", "Next": "Scenario12"},
-            {"Choice2": "1Sunday 2", "Next": "Scenario12"},
-            {"Choice3": "1Sunday 3", "Next": "Scenario12"},
-            {"Choice4": "1Sunday 4", "Next": "Scenario12"}
+            {"Choice1": "Get food from Tommie Shelf for free. It happens once a month in Iverson!", "Next": "Scenario12"},
+            {"Choice2": "Purchase from local grocers or farmer's markets.", "Next": "Scenario12"},
+            {"Choice3": "Always buy bulk, it is cheaper and less packaging.", "Next": "Scenario12"},
+            {"Choice4": "Buy individually packaged snacks since they are quick and easy.", "Next": "Scenario12"}
         ]
     },
     "Scenario12": {
         "Day_Type": "Sunday",
-        "Text": "",
+        "Text": "You've purchased all your groceries for the week. What do you do to make sure they get used before they expire?",
         "Options" : [
-            {"Choice1": "2Sunday 1", "Next": "Scenario13"},
-            {"Choice2": "2Sunday 2", "Next": "Scenario13"},
-            {"Choice3": "2Sunday 3", "Next": "Scenario13"},
-            {"Choice4": "2Sunday 4", "Next": "Scenario13"}
+            {"Choice1": "Play the Fridge Sort game to learn proper food storage.", "Next": "Scenario13"},
+            {"Choice2": "Try to eat everything quickly to avoid expiration.", "Next": "Scenario13"},
+            {"Choice3": "Freeze items that expire sooner than you would typically consume.", "Next": "Scenario13"},
+            {"Choice4": "Store food in visible areas so that you can keep accurate inventory and not forget about items.", "Next": "Scenario13"}
         ]
     },
     "Scenario13": {
         "Day_Type": "Sunday",
-        "Text": "",
+        "Text": "Your laundry hamper has been piling up all week. Time to wash some clothes!",
         "Options" : [
-            {"Choice1": "3Sunday 1", "Next": "Scenario14"},
-            {"Choice2": "3Sunday 2", "Next": "Scenario14"},
-            {"Choice3": "3Sunday 3", "Next": "Scenario14"},
-            {"Choice4": "3Sunday 4", "Next": "Scenario14"}
+            {"Choice1": "Wash small loads because they get more clean with less clothes.", "Next": "Scenario14"},
+            {"Choice2": "Air dry clothes overnight.", "Next": "Scenario14"},
+            {"Choice3": "Put all clothes in dryer at once to avoid multiple use.", "Next": "Scenario14"},
+            {"Choice4": "Rewear clothes after only a few wears.", "Next": "Scenario14"}
         ]
     },
     "Scenario14": {
         "Day_Type": "Sunday",
-        "Text": "",
+        "Text": "Your room looks like it's in need of some cleaning.",
         "Options" : [
-            {"Choice1": "4Sunday 1", "Next": "Scenario15"},
-            {"Choice2": "4Sunday 2", "Next": "Scenario15"},
-            {"Choice3": "4Sunday 3", "Next": "Scenario15"},
-            {"Choice4": "4Sunday 4", "Next": "Scenario15"}
+            {"Choice1": "Put the TV on in the background while cleaning, it is relaxing.", "Next": "Scenario15", "Consequence": "A typical TV uses between 50 and 400 watts. If you still want something to listen to, try playing music from your phone. A phone charger uses 5 to 20 watts."},
+            {"Choice2": "Save single use dishes to wash as one big load.", "Next": "Scenario15", "Consequence": "The more you can wash in a single load, the more water you save. Additionally, use a dishwasher if you can. They use significantly less water per load of dishes than handwashing."},
+            {"Choice3": "Turn on a fan all day instead of ac, since it uses less electricity.", "Next": "Scenario15", "Consequence": "Fans do use significantly less energy than the AC. Don't forget to turn it off when you leave the room!"},
+            {"Choice4": "Leave ac on consistently. It's better than turning it off and on.", "Next": "Scenario15", "Consequence": "While it may be better to constantly run the AC than turning it on and off, it's still a huge energy sink."}
         ]
     },
     "Scenario15": {
         "Day_Type": "Sunday",
         "Text": "",
         "Options" : [
-            {"Choice1": "5Sunday 1", "Next": null},
-            {"Choice2": "5Sunday 2", "Next": null},
-            {"Choice3": "5Sunday 3", "Next": null},
-            {"Choice4": "5Sunday 4", "Next": null}
+            {"Choice1": "Cook several meals in the oven separateley throughout the day to prep for the week.", "Next": null},
+            {"Choice2": "Plan to cook similar meals together when practical.", "Next": null},
+            {"Choice3": "Leave oven on between baking to keep it warm.", "Next": null},
+            {"Choice4": "Use appropriately sized appliances for different meals: oven vs microwave vs air frier.", "Next": null}
         ]
     }
     
