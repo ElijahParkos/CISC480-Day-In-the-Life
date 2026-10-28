@@ -1,5 +1,3 @@
-// TODO: Pull scenarios from scenarios.json file
-
 const textbox = document.getElementById('textbox');
 const choice1_btn = document.getElementById('choice1');
 const choice2_btn = document.getElementById('choice2');
@@ -10,6 +8,9 @@ choice1_btn.addEventListener('click', progressScenario);
 choice2_btn.addEventListener('click', progressScenario);
 choice3_btn.addEventListener('click', progressScenario);
 choice4_btn.addEventListener('click', progressScenario);
+
+const close_popup_btn = document.getElementById('close-popup');
+close_popup_btn.addEventListener('click', closeConsequence);
 
 let scenarios = {};   // loaded from scenarios.json
 let current = null;   // id of the scenario on screen
@@ -34,6 +35,7 @@ function showScenario(id) {
 
 function progressScenario(event) {
     const i = Number(event.target.id.replace('choice', '')) - 1;
+    showConsequence(i);
     const option = scenarios[current].Options[i];
 
     scoreChoice(option);
@@ -62,4 +64,18 @@ function getCategory() {
     if (average >= 2.4) return 'Most sustainable';
     if (average >= 1.6) return 'Somewhat sustainable';
     return 'Least sustainable';
+}
+
+function showConsequence(selected_option) {
+    const consequence_text = document.querySelector('#consequence');
+    const option = scenarios[current].Options[selected_option];
+    if(!("Consequence" in option)) return;
+    consequence_text.textContent = option.Consequence;
+    const dialog = document.querySelector('dialog');
+    dialog.showModal();
+}
+
+function closeConsequence() {
+    const dialog = document.querySelector('dialog');
+    dialog.close();
 }

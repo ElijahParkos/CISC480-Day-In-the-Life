@@ -23,10 +23,10 @@
         "Day_Type": "Move-In",
         "Text": "You moved in and finished unpacking all your stuff. What will you do with the boxes?",
         "Options" : [
-            {"Choice1": "Throw all the packaging into the garbage. It takes too long to sort and most of it doesn't get recycled anyways.", "Next": "Scenario3"},
-            {"Choice2": "Break down cardboard and recyclable materials.", "Next": "Scenario3"},
-            {"Choice3": "Save boxes and packaging materials for future moving in/out.", "Next": "Scenario3"},
-            {"Choice4": "Leave materials in the hallway for someone else who knows better how to handle them.", "Next": "Scenario3"}
+            {"Choice1": "Throw all the packaging into the garbage. It takes too long to sort and most of it doesn't get recycled anyways.", "Next": "Scenario3", "Consequence": "Some materials don't get recycled, but plenty still do! St. Thomas has a recycling program which includes rcycling bins in every dorm room and apartment."},
+            {"Choice2": "Break down cardboard and recyclable materials.", "Next": "Scenario3", "Consequence": "This is a good option, especially if you don't have any use for boxes in the near future. However, it's usually better to reuse if possible."},
+            {"Choice3": "Save boxes and packaging materials for future moving in/out.", "Next": "Scenario3", "Consequence": "Great choice! Not only does this prevent unrecyclable materials from ending up in a landfill, it also saves you from having to find more boxes later."},
+            {"Choice4": "Leave materials in the hallway for someone else who knows better how to handle them.", "Next": "Scenario3", "Consequence": "Do not just leave your mess for someone else to clean up. Take the time to figure out how to handle these materials or contact someone who knows what they're doing. Besides, who's to say the person who cleans up your stuff knows how to properly handle it?"}
         ]
     },
     "Scenario3": {
