@@ -1,0 +1,163 @@
+{
+    "Start": "Day_Selection",
+    "Day_Selection": {
+        "Text": "You're a UST student, what will you do today?",
+        "Options" : [
+            {"Choice1": "Today is Move-In Day!", "Next": "Scenario1"},
+            {"Choice2": "Today is Move-Out Day!", "Next": "Scenario6"},
+            {"Choice3": "Today is a regular Sunday-reset day!", "Next": "Scenario11"},
+            {"Choice4": null, "Next": null}
+        ]
+    },
+    "Scenario1": { 
+        "Day_Type": "Move-In",
+        "Text": "Today is move-in day, but you forgot to buy furniture for your dorm room.",
+        "Options" : [
+            {"Choice1": "Buy cheap furniture since it's only for college.", "Next": "Scenario2"},
+            {"Choice2": "Use Facebook Marketplace.", "Next": "Scenario2"},
+            {"Choice3": "Buy high quality new furniture you plan to keep after college.", "Next": "Scenario2"},
+            {"Choice4": "Ask friends and family for unwanted furniture.", "Next": "Scenario2"}
+        ]
+    },
+    "Scenario2": {
+        "Day_Type": "Move-In",
+        "Text": "You moved in and finished unpacking all your stuff. What will you do with the boxes?",
+        "Options" : [
+            {"Choice1": "Throw all the packaging into the garbage. It takes too long to sort and most of it doesn't get recycled anyways.", "Next": "Scenario3"},
+            {"Choice2": "Break down cardboard and recyclable materials.", "Next": "Scenario3"},
+            {"Choice3": "Save boxes and packaging materials for future moving in/out.", "Next": "Scenario3"},
+            {"Choice4": "Leave materials in the hallway for someone else who knows better how to handle them.", "Next": "Scenario3"}
+        ]
+    },
+    "Scenario3": {
+        "Day_Type": "Move-In",
+        "Text": "After unpacking everything, you realized that you forgot a couple items.",
+        "Options" : [
+            {"Choice1": "Make a separate car trip to the store to purchase forgotten items.", "Next": "Scenario4"},
+            {"Choice2": "Ask a friend to borrow items, and purchase anything else on the next errand run.", "Next": "Scenario4"},
+            {"Choice3": "Coordinate a shopping trip with roommates or a group of friends.", "Next": "Scenario4"},
+            {"Choice4": "Order everything online with express shipping.", "Next": "Scenario4"}
+        ]
+    },
+    "Scenario4": {
+        "Day_Type": "Move-In",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "4Move-In 1", "Next": "Scenario5"},
+            {"Choice2": "4Move-In 2", "Next": "Scenario5"},
+            {"Choice3": "4Move-In 3", "Next": "Scenario5"},
+            {"Choice4": "4Move-In 4", "Next": "Scenario5"}
+        ]
+    },
+    "Scenario5": {
+        "Day_Type": "Move-In",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "5Move-In 1", "Next": null},
+            {"Choice2": "5Move-In 2", "Next": null},
+            {"Choice3": "5Move-In 3", "Next": null},
+            {"Choice4": "5Move-In 4", "Next": null}
+        ]
+    },
+    "Scenario6": {
+        "Day_Type": "Move-Out",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "1Move-Out 1", "Next": "Scenario7"},
+            {"Choice2": "1Move-Out 2", "Next": "Scenario7"},
+            {"Choice3": "1Move-Out 3", "Next": "Scenario7"},
+            {"Choice4": "1Move-Out 4", "Next": "Scenario7"}
+        ]
+    },
+    "Scenario7": {
+        "Day_Type": "Move-Out",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "2Move-Out 1", "Next": "Scenario8"},
+            {"Choice2": "2Move-Out 2", "Next": "Scenario8"},
+            {"Choice3": "2Move-Out 3", "Next": "Scenario8"},
+            {"Choice4": "2Move-Out 4", "Next": "Scenario8"}
+        ]
+    },
+    "Scenario8": {
+        "Day_Type": "Move-Out",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "3Move-Out 1", "Next": "Scenario9"},
+            {"Choice2": "3Move-Out 2", "Next": "Scenario9"},
+            {"Choice3": "3Move-Out 3", "Next": "Scenario9"},
+            {"Choice4": "3Move-Out 4", "Next": "Scenario9"}
+        ]
+    },
+    "Scenario9": {
+        "Day_Type": "Move-Out",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "4Move-Out 1", "Next": "Scenario10"},
+            {"Choice2": "4Move-Out 2", "Next": "Scenario10"},
+            {"Choice3": "4Move-Out 3", "Next": "Scenario10"},
+            {"Choice4": "4Move-Out 4", "Next": "Scenario10"}
+        ]
+    },
+    "Scenario10": {
+        "Day_Type": "Move-Out",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "5Move-Out 1", "Next": null},
+            {"Choice2": "5Move-Out 2", "Next": null},
+            {"Choice3": "5Move-Out 3", "Next": null},
+            {"Choice4": "5Move-Out 4", "Next": null}
+        ]
+    },
+    "Scenario11": {
+        "Day_Type": "Sunday",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "1Sunday 1", "Next": "Scenario12"},
+            {"Choice2": "1Sunday 2", "Next": "Scenario12"},
+            {"Choice3": "1Sunday 3", "Next": "Scenario12"},
+            {"Choice4": "1Sunday 4", "Next": "Scenario12"}
+        ]
+    },
+    "Scenario12": {
+        "Day_Type": "Sunday",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "2Sunday 1", "Next": "Scenario13"},
+            {"Choice2": "2Sunday 2", "Next": "Scenario13"},
+            {"Choice3": "2Sunday 3", "Next": "Scenario13"},
+            {"Choice4": "2Sunday 4", "Next": "Scenario13"}
+        ]
+    },
+    "Scenario13": {
+        "Day_Type": "Sunday",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "3Sunday 1", "Next": "Scenario14"},
+            {"Choice2": "3Sunday 2", "Next": "Scenario14"},
+            {"Choice3": "3Sunday 3", "Next": "Scenario14"},
+            {"Choice4": "3Sunday 4", "Next": "Scenario14"}
+        ]
+    },
+    "Scenario14": {
+        "Day_Type": "Sunday",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "4Sunday 1", "Next": "Scenario15"},
+            {"Choice2": "4Sunday 2", "Next": "Scenario15"},
+            {"Choice3": "4Sunday 3", "Next": "Scenario15"},
+            {"Choice4": "4Sunday 4", "Next": "Scenario15"}
+        ]
+    },
+    "Scenario15": {
+        "Day_Type": "Sunday",
+        "Text": "",
+        "Options" : [
+            {"Choice1": "5Sunday 1", "Next": null},
+            {"Choice2": "5Sunday 2", "Next": null},
+            {"Choice3": "5Sunday 3", "Next": null},
+            {"Choice4": "5Sunday 4", "Next": null}
+        ]
+    }
+    
+}
