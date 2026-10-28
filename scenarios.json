@@ -4,9 +4,9 @@
         "Text": "You're a UST student, what will you do today?",
         "Options" : [
             {"Choice1": "Today is Move-In Day!", "Next": "Scenario1"},
-            {"Choice2": "Today is Move-In Day!", "Next": "Scenario5"},
-            {"Choice3": "Today is a regular Sunday-reset day!", "Next": "Scenario10"},
-            {"Choice4": "", "Next": "Scenario10"}
+            {"Choice2": "Today is Move-Out Day!", "Next": "Scenario6"},
+            {"Choice3": "Today is a regular Sunday-reset day!", "Next": "Scenario11"},
+            {"Choice4": null, "Next": null}
         ]
     },
     "Scenario1": { 
@@ -43,120 +43,120 @@
         "Day_Type": "Move-In",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": "Scenario5"},
-            {"Choice2": "", "Next": "Scenario5"},
-            {"Choice3": "", "Next": "Scenario5"},
-            {"Choice4": "", "Next": "Scenario5"}
+            {"Choice1": "4Move-In 1", "Next": "Scenario5"},
+            {"Choice2": "4Move-In 2", "Next": "Scenario5"},
+            {"Choice3": "4Move-In 3", "Next": "Scenario5"},
+            {"Choice4": "4Move-In 4", "Next": "Scenario5"}
         ]
     },
     "Scenario5": {
         "Day_Type": "Move-In",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": null},
-            {"Choice2": "", "Next": null},
-            {"Choice3": "", "Next": null},
-            {"Choice4": "", "Next": null}
+            {"Choice1": "5Move-In 1", "Next": null},
+            {"Choice2": "5Move-In 2", "Next": null},
+            {"Choice3": "5Move-In 3", "Next": null},
+            {"Choice4": "5Move-In 4", "Next": null}
         ]
     },
     "Scenario6": {
         "Day_Type": "Move-Out",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": "Scenario7"},
-            {"Choice2": "", "Next": "Scenario7"},
-            {"Choice3": "", "Next": "Scenario7"},
-            {"Choice4": "", "Next": "Scenario7"}
+            {"Choice1": "1Move-Out 1", "Next": "Scenario7"},
+            {"Choice2": "1Move-Out 2", "Next": "Scenario7"},
+            {"Choice3": "1Move-Out 3", "Next": "Scenario7"},
+            {"Choice4": "1Move-Out 4", "Next": "Scenario7"}
         ]
     },
     "Scenario7": {
         "Day_Type": "Move-Out",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": "Scenario8"},
-            {"Choice2": "", "Next": "Scenario8"},
-            {"Choice3": "", "Next": "Scenario8"},
-            {"Choice4": "", "Next": "Scenario8"}
+            {"Choice1": "2Move-Out 1", "Next": "Scenario8"},
+            {"Choice2": "2Move-Out 2", "Next": "Scenario8"},
+            {"Choice3": "2Move-Out 3", "Next": "Scenario8"},
+            {"Choice4": "2Move-Out 4", "Next": "Scenario8"}
         ]
     },
     "Scenario8": {
         "Day_Type": "Move-Out",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": "Scenario9"},
-            {"Choice2": "", "Next": "Scenario9"},
-            {"Choice3": "", "Next": "Scenario9"},
-            {"Choice4": "", "Next": "Scenario9"}
+            {"Choice1": "3Move-Out 1", "Next": "Scenario9"},
+            {"Choice2": "3Move-Out 2", "Next": "Scenario9"},
+            {"Choice3": "3Move-Out 3", "Next": "Scenario9"},
+            {"Choice4": "3Move-Out 4", "Next": "Scenario9"}
         ]
     },
     "Scenario9": {
         "Day_Type": "Move-Out",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": "Scenario10"},
-            {"Choice2": "", "Next": "Scenario10"},
-            {"Choice3": "", "Next": "Scenario10"},
-            {"Choice4": "", "Next": "Scenario10"}
+            {"Choice1": "4Move-Out 1", "Next": "Scenario10"},
+            {"Choice2": "4Move-Out 2", "Next": "Scenario10"},
+            {"Choice3": "4Move-Out 3", "Next": "Scenario10"},
+            {"Choice4": "4Move-Out 4", "Next": "Scenario10"}
         ]
     },
     "Scenario10": {
         "Day_Type": "Move-Out",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": null},
-            {"Choice2": "", "Next": null},
-            {"Choice3": "", "Next": null},
-            {"Choice4": "", "Next": null}
+            {"Choice1": "5Move-Out 1", "Next": null},
+            {"Choice2": "5Move-Out 2", "Next": null},
+            {"Choice3": "5Move-Out 3", "Next": null},
+            {"Choice4": "5Move-Out 4", "Next": null}
         ]
     },
     "Scenario11": {
         "Day_Type": "Sunday",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": "Scenario11"},
-            {"Choice2": "", "Next": "Scenario11"},
-            {"Choice3": "", "Next": "Scenario11"},
-            {"Choice4": "", "Next": "Scenario11"}
+            {"Choice1": "1Sunday 1", "Next": "Scenario12"},
+            {"Choice2": "1Sunday 2", "Next": "Scenario12"},
+            {"Choice3": "1Sunday 3", "Next": "Scenario12"},
+            {"Choice4": "1Sunday 4", "Next": "Scenario12"}
         ]
     },
     "Scenario12": {
         "Day_Type": "Sunday",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": "Scenario13"},
-            {"Choice2": "", "Next": "Scenario13"},
-            {"Choice3": "", "Next": "Scenario13"},
-            {"Choice4": "", "Next": "Scenario13"}
+            {"Choice1": "2Sunday 1", "Next": "Scenario13"},
+            {"Choice2": "2Sunday 2", "Next": "Scenario13"},
+            {"Choice3": "2Sunday 3", "Next": "Scenario13"},
+            {"Choice4": "2Sunday 4", "Next": "Scenario13"}
         ]
     },
     "Scenario13": {
         "Day_Type": "Sunday",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": "Scenario14"},
-            {"Choice2": "", "Next": "Scenario14"},
-            {"Choice3": "", "Next": "Scenario14"},
-            {"Choice4": "", "Next": "Scenario14"}
+            {"Choice1": "3Sunday 1", "Next": "Scenario14"},
+            {"Choice2": "3Sunday 2", "Next": "Scenario14"},
+            {"Choice3": "3Sunday 3", "Next": "Scenario14"},
+            {"Choice4": "3Sunday 4", "Next": "Scenario14"}
         ]
     },
     "Scenario14": {
         "Day_Type": "Sunday",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": "Scenario15"},
-            {"Choice2": "", "Next": "Scenario15"},
-            {"Choice3": "", "Next": "Scenario15"},
-            {"Choice4": "", "Next": "Scenario15"}
+            {"Choice1": "4Sunday 1", "Next": "Scenario15"},
+            {"Choice2": "4Sunday 2", "Next": "Scenario15"},
+            {"Choice3": "4Sunday 3", "Next": "Scenario15"},
+            {"Choice4": "4Sunday 4", "Next": "Scenario15"}
         ]
     },
     "Scenario15": {
         "Day_Type": "Sunday",
         "Text": "",
         "Options" : [
-            {"Choice1": "", "Next": null},
-            {"Choice2": "", "Next": null},
-            {"Choice3": "", "Next": null},
-            {"Choice4": "", "Next": null}
+            {"Choice1": "5Sunday 1", "Next": null},
+            {"Choice2": "5Sunday 2", "Next": null},
+            {"Choice3": "5Sunday 3", "Next": null},
+            {"Choice4": "5Sunday 4", "Next": null}
         ]
     }
     
