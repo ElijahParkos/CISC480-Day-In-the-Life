@@ -26,10 +26,10 @@ function showScenario(id) {
     const s = scenarios[id];
 
     textbox.textContent = s.Text;
-    choice1_btn.textContent = s.Options[0].Text;
-    choice2_btn.textContent = s.Options[1].Text;
-    choice3_btn.textContent = s.Options[2].Text;
-    choice4_btn.textContent = s.Options[3].Text;
+    choice1_btn.textContent = s.Options[0].Choice1;
+    choice2_btn.textContent = s.Options[1].Choice2;
+    choice3_btn.textContent = s.Options[2].Choice3;
+    choice4_btn.textContent = s.Options[3].Choice4;
 }
 
 function progressScenario(event) {
