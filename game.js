@@ -42,7 +42,7 @@ function progressScenario(event) {
     if (option.Next) {
         showScenario(option.Next);
     } else {
-        textbox.textContent = getCategory();
+        showEndingSummary(getCategory());
     }
 }
 
