@@ -90,9 +90,5 @@ const endingTextbox = document.getElementById('textbox');
 document.querySelectorAll('.choice-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
         recordChoice({ text: endingTextbox.textContent }, { text: btn.textContent });
-
-        if (choiceHistory.length >= length) {
-            showEndingSummary();
-        }
     });
 });

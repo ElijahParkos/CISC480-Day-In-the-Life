@@ -13,10 +13,10 @@
         "Day_Type": "Move-In",
         "Text": "Today is move-in day, but you forgot to buy furniture for your dorm room.",
         "Options" : [
-            {"Choice1": "Buy cheap furniture since it's only for college.", "Next": "Scenario2"},
-            {"Choice2": "Use Facebook Marketplace.", "Next": "Scenario2"},
-            {"Choice3": "Buy high quality new furniture you plan to keep after college.", "Next": "Scenario2"},
-            {"Choice4": "Ask friends and family for unwanted furniture.", "Next": "Scenario2"}
+            {"Choice1": "Buy cheap furniture since it's only for college.", "level": "low", "Next": "Scenario2"},
+            {"Choice2": "Use Facebook Marketplace.", "level": "high", "Next": "Scenario2"},
+            {"Choice3": "Buy high quality new furniture you plan to keep after college.", "level": "mid", "Next": "Scenario2"},
+            {"Choice4": "Ask friends and family for unwanted furniture.", "level": "high", "Next": "Scenario2"}
         ]
     },
     "Scenario2": {
