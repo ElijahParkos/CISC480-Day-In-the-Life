@@ -13,10 +13,10 @@
         "Day_Type": "Move-In",
         "Text": "Today is move-in day, but you forgot to buy furniture for your dorm room.",
         "Options" : [
-            {"Choice1": "Buy cheap furniture since it's only for college.", "level": "low", "Next": "Scenario2"},
-            {"Choice2": "Use Facebook Marketplace.", "level": "high", "Next": "Scenario2"},
-            {"Choice3": "Buy high quality new furniture you plan to keep after college.", "level": "mid", "Next": "Scenario2"},
-            {"Choice4": "Ask friends and family for unwanted furniture.", "level": "high", "Next": "Scenario2"}
+            {"Choice1": "Buy cheap furniture since it's only for college.", "level": "low", "Next": "Scenario2", "Consequence": "Cheap furniture might not last long, and then you're buying again. Used or borrowed pieces are usually cheaper and keep furniture out of the trash!"},
+            {"Choice2": "Use Facebook Marketplace.", "level": "high", "Next": "Scenario2", "Consequence": "Nice! Secondhand furniture is usually cheaper, and you're keeping a perfectly good piece out of the landfill. Bring a friend with a car and it's one easy trip."},
+            {"Choice3": "Buy high quality new furniture you plan to keep after college.", "level": "mid", "Next": "Scenario2", "Consequence": "Furniture you'll actually keep beats cheap stuff you'll replace. It's still brand new though, so check Marketplace or ask around first!"},
+            {"Choice4": "Ask friends and family for unwanted furniture.", "level": "high", "Next": "Scenario2", "Consequence": "Great choice! Free furniture from people you know saves money and keeps it out of the landfill."}
         ]
     },
     "Scenario2": {
@@ -33,30 +33,30 @@
         "Day_Type": "Move-In",
         "Text": "After unpacking everything, you realized that you forgot a couple items.",
         "Options" : [
-            {"Choice1": "Make a separate car trip to the store to purchase forgotten items.", "Next": "Scenario4"},
-            {"Choice2": "Ask a friend to borrow items, and purchase anything else on the next errand run.", "Next": "Scenario4"},
-            {"Choice3": "Coordinate a shopping trip with roommates or a group of friends.", "Next": "Scenario4"},
-            {"Choice4": "Order everything online with express shipping.", "Next": "Scenario4"}
+            {"Choice1": "Make a separate car trip to the store to purchase forgotten items.", "Next": "Scenario4", "Consequence": "A whole car trip for a couple of items adds up fast. Try bundling it with another errand next time!"},
+            {"Choice2": "Ask a friend to borrow items, and purchase anything else on the next errand run.", "Next": "Scenario4", "Consequence": "Smart! Borrowing saves you from buying something you might only use once, and waiting for your next errand skips an extra trip."},
+            {"Choice3": "Coordinate a shopping trip with roommates or a group of friends.", "Next": "Scenario4", "Consequence": "Good move! One shared trip beats everyone driving separately. Borrowing first would be even better."},
+            {"Choice4": "Order everything online with express shipping.", "Next": "Scenario4", "Consequence": "Fast shipping is handy, but rushed deliveries can mean extra trips and half-empty trucks. Regular shipping or borrowing is easier on the planet."}
         ]
     },
     "Scenario4": {
         "Day_Type": "Move-In",
         "Text": "You decided that the place looks a little barren... It could use some decorations!",
         "Options" : [
-            {"Choice1": "Buy new decorations for every season.", "Next": "Scenario5"},
-            {"Choice2": "DIY decorations from materials at the CreateSpace.", "Next": "Scenario5"},
-            {"Choice3": "Use old decorations from family members or Facebook Marketplace.", "Next": "Scenario5"},
-            {"Choice4": "Throw out decorations since it takes up too much space and is low quality anyways.", "Next": "Scenario5"}
+            {"Choice1": "Buy new decorations for every season.", "Next": "Scenario5", "Consequence": "Seasonal decor is fun, but you only use it for a few weeks. Reusing or swapping with friends gives you the same variety with less stuff!"},
+            {"Choice2": "DIY decorations from materials at the CreateSpace.", "Next": "Scenario5", "Consequence": "Nice and creative! Using materials already on campus beats buying new ones. Reusing decorations that already exist would be even better, though."},
+            {"Choice3": "Use old decorations from family members or Facebook Marketplace.", "Next": "Scenario5", "Consequence": "Great choice! Nothing new has to be made or shipped, and family decorations add a personal touch."},
+            {"Choice4": "Throw out decorations since it takes up too much space and is low quality anyways.", "Next": "Scenario5", "Consequence": "If they're still usable, a landfill isn't their best next stop. Pass them to a friend or donate them instead!"}
         ]
     },
     "Scenario5": {
         "Day_Type": "Move-In",
         "Text": "You relized that you also forgot to get kitchen, cleaning, and school supplies.",
         "Options" : [
-            {"Choice1": "Buy new complete set of kitchen, cleaning, and school supplies with the intent of using in future.", "Next": null},
-            {"Choice2": "Borrow items communally that you will not use as regularly.", "Next": null},
-            {"Choice3": "Use old school supplies and kitchen items from home.", "Next": null},
-            {"Choice4": "Buy cheap and disposable items since it's only for college and you won't need it later.", "Next": null}
+            {"Choice1": "Buy new complete set of kitchen, cleaning, and school supplies with the intent of using in future.", "Next": null, "Consequence": "A full set is great if you'll really use it, but it's easy to end up with stuff you rarely touch. Check what you have or can borrow first!"},
+            {"Choice2": "Borrow items communally that you will not use as regularly.", "Next": null, "Consequence": "Great choice! Sharing things you rarely use means one blender can serve a whole floor instead of everyone buying their own."},
+            {"Choice3": "Use old school supplies and kitchen items from home.", "Next": null, "Consequence": "Great choice! Using what you already own is free, and nothing new gets made, shipped, or tossed."},
+            {"Choice4": "Buy cheap and disposable items since it's only for college and you won't need it later.", "Next": null, "Consequence": "Cheap disposable stuff gets used a few times and then thrown out, and a lot of it is plastic. A few sturdy items will save you money by the end of the year."}
         ]
     },
     "Scenario6": {
