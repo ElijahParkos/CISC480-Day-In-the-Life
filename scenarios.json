@@ -6,7 +6,7 @@
             {"Choice1": "Today is Move-In Day!", "Next": "Scenario1"},
             {"Choice2": "Today is Move-Out Day!", "Next": "Scenario6"},
             {"Choice3": "Today is a regular Sunday-reset day!", "Next": "Scenario11"},
-            {"Choice4": null, "Next": null}
+            {"Choice4": "Today you're hosting an event!", "Next": "Scenario16"}
         ]
     },
     "Scenario1": { 
@@ -157,6 +157,56 @@
             {"Choice2": "Plan to cook similar meals together when practical.", "Next": null},
             {"Choice3": "Leave oven on between baking to keep it warm.", "Next": null},
             {"Choice4": "Use appropriately sized appliances for different meals: oven vs microwave vs air frier.", "Next": null}
+        ]
+    },
+    "Scenario16": {
+        "Day_Type": "Event",
+        "Text": "You're hosting a get-together with your friends tonight! First things first: what's the plan for food?",
+        "Options" : [
+            {"Choice1": "Ask everyone to bring their own snacks and take home whatever they don't finish.", "level": "mid", "Next": "Scenario17", "Consequence": "Less food gets wasted since everyone takes their leftovers home. Coordinate who brings what so you don't end up with five bags of the same chips!"},
+            {"Choice2": "Plan the menu and portions ahead of time with your guests.", "level": "mid", "Next": "Scenario17", "Consequence": "Smart planning! Knowing what people want and how much they'll eat means fewer leftovers in the trash. Pick foods with less packaging and you're all set."},
+            {"Choice3": "Buy snacks you think people might like and throw away whatever doesn't get eaten.", "level": "low", "Next": "Scenario17", "Consequence": "Guessing usually means buying too much, and tossing the extras wastes food and money. Ask what people want, or send leftovers home with your guests!"},
+            {"Choice4": "Serve food with minimal packaging, like pizza, sandwiches, or finger foods.", "level": "high", "Next": "Scenario17", "Consequence": "Great choice! Pizza, sandwiches, and finger foods are easy to share and come with barely any packaging to throw away."}
+        ]
+    },
+    "Scenario17": {
+        "Day_Type": "Event",
+        "Text": "Your guests will need something to eat off of. What will you set out?",
+        "Options" : [
+            {"Choice1": "Buy compostable or recyclable plates and utensils.", "level": "mid", "Next": "Scenario18", "Consequence": "Better than plastic, but they only help if they actually end up in a compost or recycling bin. Reusable dishes are even better!"},
+            {"Choice2": "Use your own dishes and silverware.", "level": "high", "Next": "Scenario18", "Consequence": "Great choice! Real dishes can be washed and used again and again, so nothing goes in the trash. Ask a friend to help with cleanup!"},
+            {"Choice3": "Use paper towels as plates for snacks.", "level": "mid", "Next": "Scenario18", "Consequence": "Not bad! Paper towels can go in the compost bin instead of the trash. Reusable plates are still the best option, though."},
+            {"Choice4": "Buy plastic utensils and throw them all away after. Fewer dishes to wash!", "level": "low", "Next": "Scenario18", "Consequence": "Plastic utensils get used once and then sit in a landfill for a very long time. A few minutes of washing dishes is worth it!"}
+        ]
+    },
+    "Scenario18": {
+        "Day_Type": "Event",
+        "Text": "The room feels a little plain for a party. How will you decorate?",
+        "Options" : [
+            {"Choice1": "Ask friends if you can borrow their party decorations.", "level": "high", "Next": "Scenario19", "Consequence": "Great choice! Borrowed decorations are free, and nothing new has to be made or shipped. Just remember to give them back!"},
+            {"Choice2": "Order party decorations from Target on DoorDash.", "level": "low", "Next": "Scenario19", "Consequence": "Same-day delivery for decorations you'll use once means extra packaging, an extra car trip, and more stuff to toss later. Borrowing is cheaper too!"},
+            {"Choice3": "Head to the CreateSpace and craft your own decorations.", "level": "mid", "Next": "Scenario19", "Consequence": "Creative! Using craft supplies already on campus beats buying new decorations. Save them for your next party to get even more use out of them."},
+            {"Choice4": "Buy single-use party favors for everyone. They're fun!", "level": "low", "Next": "Scenario19", "Consequence": "Party favors are fun for about a minute, but most end up in the trash by the end of the night. Skip them, or pick something people will actually keep."}
+        ]
+    },
+    "Scenario19": {
+        "Day_Type": "Event",
+        "Text": "Your guests are asking how they should get to your event.",
+        "Options" : [
+            {"Choice1": "Start a group chat so guests can plan carpools.", "level": "mid", "Next": "Scenario20", "Consequence": "Nice! Fewer cars means less gas and less parking stress. Suggesting walking, biking, or the bus would be even better!"},
+            {"Choice2": "Don't worry about it. How your guests get there isn't your problem.", "level": "low", "Next": "Scenario20", "Consequence": "As the host, a quick tip can make a big difference! Suggesting carpools, biking, or the bus cuts down on emissions and parking headaches."},
+            {"Choice3": "Encourage guests to walk, bike, or take the bus in your invitation.", "level": "high", "Next": "Scenario20", "Consequence": "Great choice! Walking, biking, and taking the bus cut down on car emissions, and nobody has to fight over parking."},
+            {"Choice4": "Tell everyone to drive separately. Watching them hunt for parking will be entertaining!", "level": "low", "Next": "Scenario20", "Consequence": "More cars means more emissions, more traffic, and more stressed-out guests. A carpool group chat takes two minutes to set up!"}
+        ]
+    },
+    "Scenario20": {
+        "Day_Type": "Event",
+        "Text": "Guests are about to arrive! Time to put the finishing touches on your setup.",
+        "Options" : [
+            {"Choice1": "Turn on every light in the house so everyone can see.", "level": "low", "Next": null, "Consequence": "Lights in empty rooms waste electricity. Only light the spaces your guests will use, or let natural light do the work!"},
+            {"Choice2": "Set out plenty of easy-to-find recycling bins so cans and bottles don't end up in the trash.", "level": "high", "Next": null, "Consequence": "Great choice! People recycle a lot more when a bin is right in front of them. Labeling the bins helps too."},
+            {"Choice3": "Only set out trash cans. Taking out both the trash and the recycling later is too much work.", "level": "low", "Next": null, "Consequence": "Without a recycling bin, every can and bottle goes straight to the landfill. Setting out a second bin takes almost no extra effort!"},
+            {"Choice4": "Host outside during the day, or in a room with lots of natural light.", "level": "high", "Next": null, "Consequence": "Bright idea! Sunlight is free, so you won't need to run lights all evening."}
         ]
     }
     
