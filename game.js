@@ -35,10 +35,16 @@ function showScenario(id) {
 
 function progressScenario(event) {
     const i = Number(event.target.id.replace('choice', '')) - 1;
+    const scenario = scenarios[current];
+    const option = scenarios.Options[i];
     showConsequence(i);
-    const option = scenarios[current].Options[i];
 
-    scoreChoice(option);
+    // skip the day selection screen so it isn't scored or listed in the summary
+    if (current !== scenarios.Start) {
+        recordChoice(scenario.Text, option['Choice' + (i + 1)], option.score);
+        scoreChoice(option);
+    }
+    
     if (option.Next) {
         showScenario(option.Next);
     } else {
@@ -47,35 +53,21 @@ function progressScenario(event) {
 }
 
 // Scoring
-// Score keeper for each level of sustainability
-let counts = { low: 0, mid: 0, high: 0 };
+let totalScore = 0;
+let scoredChoices = 0;
 
-// call with the option the player picked
 function scoreChoice(option) {
-    counts[option.level]++;
+    if (typeof option.score !== 'number') return; // ignore options without a score
+    totalScore = totalScore + option.score;
+    scoredChoices++;
 }
 
 // call when the end of a path is reached
 function getCategory() {
-    const answered = counts.low + counts.mid + counts.high;
-    if (answered === 0) return '';
-    const average = (counts.low * 1 + counts.mid * 2 + counts.high * 3) / answered;
-    // category names can be changed when and cutoffs can be adjusted
-    if (average >= 2.4) return 'Most sustainable';
-    if (average >= 1.6) return 'Somewhat sustainable';
-    return 'Least sustainable';
-}
-
-function showConsequence(selected_option) {
-    const consequence_text = document.querySelector('#consequence');
-    const option = scenarios[current].Options[selected_option];
-    if(!("Consequence" in option)) return;
-    consequence_text.textContent = option.Consequence;
-    const dialog = document.querySelector('dialog');
-    dialog.showModal();
-}
-
-function closeConsequence() {
-    const dialog = document.querySelector('dialog');
-    dialog.close();
+    if (scoredChoices === 0) return '';
+    const average = totalScore / scoredChoices;
+    // cutoffs split the 1-5 range into thirds
+    if (average >= 3.7) return 'Positive Sustainability Impact';
+    if (average >= 2.4) return 'Neutral Sustainability Impact';
+    return 'Negative Sustainability Impact';
 }
