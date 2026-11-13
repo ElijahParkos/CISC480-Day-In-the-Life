@@ -36,15 +36,17 @@ function showScenario(id) {
 function progressScenario(event) {
     const i = Number(event.target.id.replace('choice', '')) - 1;
     const scenario = scenarios[current];
-    const option = scenarios.Options[i];
+    const option = scenario.Options[i];
+
     showConsequence(i);
 
     // skip the day selection screen so it isn't scored or listed in the summary
     if (current !== scenarios.Start) {
-        recordChoice(scenario.Text, option['Choice' + (i + 1)], option.score);
-        scoreChoice(option);
+        const best = Math.max(...getScores(scenario));
+        recordChoice(scenario.Text, option['Choice' + (i + 1)], option.score, best);
+        scoreChoice(scenario, option);
     }
-    
+
     if (option.Next) {
         showScenario(option.Next);
     } else {
