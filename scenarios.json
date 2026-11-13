@@ -13,201 +13,200 @@
         "Day_Type": "Move-In",
         "Text": "Today is move-in day, but you forgot to buy furniture for your dorm room.",
         "Options" : [
-            {"Choice1": "Buy cheap furniture since it's only for college.", "level": "low", "Next": "Scenario2", "Consequence": "Cheap furniture might not last long, and then you're buying again. Used or borrowed pieces are usually cheaper and keep furniture out of the trash!"},
-            {"Choice2": "Use Facebook Marketplace.", "level": "high", "Next": "Scenario2", "Consequence": "Nice! Secondhand furniture is usually cheaper, and you're keeping a perfectly good piece out of the landfill. Bring a friend with a car and it's one easy trip."},
-            {"Choice3": "Buy high quality new furniture you plan to keep after college.", "level": "mid", "Next": "Scenario2", "Consequence": "Furniture you'll actually keep beats cheap stuff you'll replace. It's still brand new though, so check Marketplace or ask around first!"},
-            {"Choice4": "Ask friends and family for unwanted furniture.", "level": "high", "Next": "Scenario2", "Consequence": "Great choice! Free furniture from people you know saves money and keeps it out of the landfill."}
+            {"Choice1": "Buy cheap furniture since it's only for college.", "level": "low", "score": 1, "Next": "Scenario2", "Consequence": "Cheap furniture might not last long, and then you're buying again. Used or borrowed pieces are usually cheaper and keep furniture out of the trash!"},
+            {"Choice2": "Use Facebook Marketplace.", "level": "high", "score": 5, "Next": "Scenario2", "Consequence": "Nice! Secondhand furniture is usually cheaper, and you're keeping a perfectly good piece out of the landfill. Bring a friend with a car and it's one easy trip."},
+            {"Choice3": "Buy high quality new furniture you plan to keep after college.", "level": "mid", "score": 3, "Next": "Scenario2", "Consequence": "Furniture you'll actually keep beats cheap stuff you'll replace. It's still brand new though, so check Marketplace or ask around first!"},
+            {"Choice4": "Ask friends and family for unwanted furniture.", "level": "high", "score": 5, "Next": "Scenario2", "Consequence": "Great choice! Free furniture from people you know saves money and keeps it out of the landfill."}
         ]
     },
     "Scenario2": {
         "Day_Type": "Move-In",
-        "Text": "You moved in and finished unpacking all your stuff. What will you do with the boxes?",
+        "Text": "Moving in means dealing with lots of boxes, bags, and packing materials. How do you handle yours?",
         "Options" : [
-            {"Choice1": "Throw all the packaging into the garbage. It takes too long to sort and most of it doesn't get recycled anyways.", "Next": "Scenario3", "Consequence": "Some materials don't get recycled, but plenty still do! St. Thomas has a recycling program which includes rcycling bins in every dorm room and apartment."},
-            {"Choice2": "Break down cardboard and recyclable materials.", "Next": "Scenario3", "Consequence": "This is a good option, especially if you don't have any use for boxes in the near future. However, it's usually better to reuse if possible."},
-            {"Choice3": "Save boxes and packaging materials for future moving in/out.", "Next": "Scenario3", "Consequence": "Great choice! Not only does this prevent unrecyclable materials from ending up in a landfill, it also saves you from having to find more boxes later."},
-            {"Choice4": "Leave materials in the hallway for someone else who knows better how to handle them.", "Next": "Scenario3", "Consequence": "Do not just leave your mess for someone else to clean up. Take the time to figure out how to handle these materials or contact someone who knows what they're doing. Besides, who's to say the person who cleans up your stuff knows how to properly handle it?"}
+            {"Choice1": "Throw all the packaging into the garbage. It takes too long to sort and most of it doesn't get recycled anyways.", "score": 1, "Next": "Scenario3", "Consequence": "Some materials don't get recycled, but plenty still do! St. Thomas has a recycling program which includes rcycling bins in every dorm room and apartment."},
+            {"Choice2": "Wrap fragile items in bubble wrap and packing peanuts.", "score": 1, "Next": "Scenario3", "Consequence": "Bubble wrap and packing peanuts are hard to recycle and usually end up in the trash. Wrapping fragile items in clothes, towels, or blankets works just as well, and you have to pack those anyway!"},
+            {"Choice3": "Recycle plastic bags in the special recycling bins on campus (CreateSpace, by the MHC campus store, or TMH lower level).", "score": 4, "Next": "Scenario3", "Consequence": "Nice! Plastic bags can jam regular recycling machines, so those special bins are the right place for them. Reusing them first is even better!"},
+            {"Choice4": "Pack your stuff in reusable containers like plastic bins, laundry baskets, suitcases, and sturdy boxes.", "score": 5, "Next": "Scenario3", "Consequence": "Great choice! Bins, baskets, and suitcases protect your stuff, and they'll be ready to go again on move-out day. Nothing to throw away!"}
         ]
     },
     "Scenario3": {
         "Day_Type": "Move-In",
         "Text": "After unpacking everything, you realized that you forgot a couple items.",
         "Options" : [
-            {"Choice1": "Make a separate car trip to the store to purchase forgotten items.", "Next": "Scenario4", "Consequence": "A whole car trip for a couple of items adds up fast. Try bundling it with another errand next time!"},
-            {"Choice2": "Ask a friend to borrow items, and purchase anything else on the next errand run.", "Next": "Scenario4", "Consequence": "Smart! Borrowing saves you from buying something you might only use once, and waiting for your next errand skips an extra trip."},
-            {"Choice3": "Coordinate a shopping trip with roommates or a group of friends.", "Next": "Scenario4", "Consequence": "Good move! One shared trip beats everyone driving separately. Borrowing first would be even better."},
-            {"Choice4": "Order everything online with express shipping.", "Next": "Scenario4", "Consequence": "Fast shipping is handy, but rushed deliveries can mean extra trips and half-empty trucks. Regular shipping or borrowing is easier on the planet."}
+            {"Choice1": "Make a separate car trip to the store to purchase forgotten items.", "score": 1, "Next": "Scenario4", "Consequence": "A whole car trip for a couple of items adds up fast. Try bundling it with another errand next time!"},
+            {"Choice2": "Take the UST shuttle to the Target in Minneapolis.", "score": 4, "Next": "Scenario4", "Consequence": "Nice! The shuttle is already making the trip, so you skip driving and parking. Make a list so you get everything in one go!"},
+            {"Choice3": "Coordinate a shopping trip with roommates or a group of friends.", "score": 3, "Next": "Scenario4", "Consequence": "Good move! One shared trip beats everyone driving separately. Borrowing first would be even better."},
+            {"Choice4": "Order everything online with express shipping.", "score": 2, "Next": "Scenario4", "Consequence": "Fast shipping is handy, but rushed deliveries can mean extra trips and half-empty trucks. Regular shipping or borrowing is easier on the planet."}
         ]
     },
     "Scenario4": {
         "Day_Type": "Move-In",
         "Text": "You decided that the place looks a little barren... It could use some decorations!",
         "Options" : [
-            {"Choice1": "Buy new decorations for every season.", "Next": "Scenario5", "Consequence": "Seasonal decor is fun, but you only use it for a few weeks. Reusing or swapping with friends gives you the same variety with less stuff!"},
-            {"Choice2": "DIY decorations from materials at the CreateSpace.", "Next": "Scenario5", "Consequence": "Nice and creative! Using materials already on campus beats buying new ones. Reusing decorations that already exist would be even better, though."},
-            {"Choice3": "Use old decorations from family members or Facebook Marketplace.", "Next": "Scenario5", "Consequence": "Great choice! Nothing new has to be made or shipped, and family decorations add a personal touch."},
-            {"Choice4": "Throw out decorations since it takes up too much space and is low quality anyways.", "Next": "Scenario5", "Consequence": "If they're still usable, a landfill isn't their best next stop. Pass them to a friend or donate them instead!"}
+            {"Choice1": "Buy new decorations for every season.", "score": 1, "Next": "Scenario5", "Consequence": "Seasonal decor is fun, but you only use it for a few weeks. Reusing or swapping with friends gives you the same variety with less stuff!"},
+            {"Choice2": "DIY decorations from materials at the CreateSpace.", "score": 4, "Next": "Scenario5", "Consequence": "Nice and creative! Using materials already on campus beats buying new ones. Reusing decorations that already exist would be even better, though."},
+            {"Choice3": "Use old decorations from family members or Facebook Marketplace.", "score": 5, "Next": "Scenario5", "Consequence": "Great choice! Nothing new has to be made or shipped, and family decorations add a personal touch."},
+            {"Choice4": "Throw out decorations since it takes up too much space and is low quality anyways.", "score": 1, "Next": "Scenario5", "Consequence": "If they're still usable, a landfill isn't their best next stop. Pass them to a friend or donate them instead!"}
         ]
     },
     "Scenario5": {
         "Day_Type": "Move-In",
         "Text": "You relized that you also forgot to get kitchen, cleaning, and school supplies.",
         "Options" : [
-            {"Choice1": "Buy new complete set of kitchen, cleaning, and school supplies with the intent of using in future.", "Next": null, "Consequence": "A full set is great if you'll really use it, but it's easy to end up with stuff you rarely touch. Check what you have or can borrow first!"},
-            {"Choice2": "Borrow items communally that you will not use as regularly.", "Next": null, "Consequence": "Great choice! Sharing things you rarely use means one blender can serve a whole floor instead of everyone buying their own."},
-            {"Choice3": "Use old school supplies and kitchen items from home.", "Next": null, "Consequence": "Great choice! Using what you already own is free, and nothing new gets made, shipped, or tossed."},
-            {"Choice4": "Buy cheap and disposable items since it's only for college and you won't need it later.", "Next": null, "Consequence": "Cheap disposable stuff gets used a few times and then thrown out, and a lot of it is plastic. A few sturdy items will save you money by the end of the year."}
+            {"Choice1": "Buy new complete set of kitchen, cleaning, and school supplies with the intent of using in future.", "score": 3, "Next": null, "Consequence": "A full set is great if you'll really use it, but it's easy to end up with stuff you rarely touch. Check what you have or can borrow first!"},
+            {"Choice2": "Borrow items communally that you will not use as regularly.", "score": 5, "Next": null, "Consequence": "Great choice! Sharing things you rarely use means one blender can serve a whole floor instead of everyone buying their own."},
+            {"Choice3": "Use old school supplies and kitchen items from home.", "score": 5, "Next": null, "Consequence": "Great choice! Using what you already own is free, and nothing new gets made, shipped, or tossed."},
+            {"Choice4": "Buy cheap and disposable items since it's only for college and you won't need it later.", "score": 1, "Next": null, "Consequence": "Cheap disposable stuff gets used a few times and then thrown out, and a lot of it is plastic. A few sturdy items will save you money by the end of the year."}
         ]
     },
     "Scenario6": {
         "Day_Type": "Move-Out",
         "Text": "The school year is over! You're moving out of your dorm room today. What do you do with all your furniture?",
         "Options" : [
-            {"Choice1": "Donate unwanted furniture to incoming students in residence halls bins.", "Next": "Scenario7", "Consequence": "Great choice! Your old furniture gets a second life with an incoming student, and it stays out of the landfill."},
-            {"Choice2": "Sell unwanted furniture online or to other students.", "Next": "Scenario7", "Consequence": "Nice! Someone gets cheap furniture, you get a little cash, and nothing ends up in the trash."},
-            {"Choice3": "Throw away unwanted furniture because it is low quality anyways and it's too difficult to drive it anywhere.", "Next": "Scenario7", "Consequence": "Furniture is bulky and hard to recycle, so it usually just piles up in a landfill. Even a quick donation or sale beats the dumpster!"},
-            {"Choice4": "Keep furniture for next year or to bring home.", "Next": "Scenario7", "Consequence": "Smart! Keeping it means you won't have to buy furniture again next year. Just make sure it's worth the hauling."}
+            {"Choice1": "Donate unwanted furniture to incoming students in residence halls bins.", "score": 4, "Next": "Scenario7", "Consequence": "Great choice! Your old furniture gets a second life with an incoming student, and it stays out of the landfill."},
+            {"Choice2": "Sell unwanted furniture online or to other students.", "score": 4, "Next": "Scenario7", "Consequence": "Nice! Someone gets cheap furniture, you get a little cash, and nothing ends up in the trash."},
+            {"Choice3": "Throw away unwanted furniture because it is low quality anyways and it's too difficult to drive it anywhere.", "score": 1, "Next": "Scenario7", "Consequence": "Furniture is bulky and hard to recycle, so it usually just piles up in a landfill. Even a quick donation or sale beats the dumpster!"},
+            {"Choice4": "Keep furniture for next year or to bring home.", "score": 5, "Next": "Scenario7", "Consequence": "Smart! Keeping it means you won't have to buy furniture again next year. Just make sure it's worth the hauling."}
         ]
     },
     "Scenario7": {
         "Day_Type": "Move-Out",
         "Text": "You still have some unopened food left in your dorm room.",
         "Options" : [
-            {"Choice1": "Throw away unopened food since it is probably old anyways and takes too long to sort through.", "Next": "Scenario8", "Consequence": "Unopened food is usually still good! Tossing it wastes the food and everything it took to make it. Someone else would happily take it."},
-            {"Choice2": "Bring home every food item, even if you don't know if you'll use it, you might!", "Next": "Scenario8", "Consequence": "Hauling home food you might never eat can mean it goes bad anyway. Take what you'll really use and pass on the rest."},
-            {"Choice3": "Offer unopened items to your roommate or friends.", "Next": "Scenario8", "Consequence": "Nice! Your friends get free snacks and nothing goes to waste."},
-            {"Choice4": "Donate elligible unopened food in campus bins or commuter lounge.", "Next": "Scenario8", "Consequence": "Great choice! Donated food goes to people who can use it instead of the trash."}
+            {"Choice1": "Throw away unopened food since it is probably old anyways and takes too long to sort through.", "score": 1, "Next": "Scenario8", "Consequence": "Unopened food is usually still good! Tossing it wastes the food and everything it took to make it. Someone else would happily take it."},
+            {"Choice2": "Take note of what you have too much of, and buy less of it next year.", "score": 4, "Next": "Scenario8", "Consequence": "Smart! Buying less next time means less wasted food and money. Just make sure this year's extras still find a home!"},
+            {"Choice3": "Offer unopened items to your roommate or friends.", "score": 4, "Next": "Scenario8", "Consequence": "Nice! Your friends get free snacks and nothing goes to waste."},
+            {"Choice4": "Donate elligible unopened food in campus bins or commuter lounge.", "score": 5, "Next": "Scenario8", "Consequence": "Great choice! Donated food goes to people who can use it instead of the trash."}
         ]
     },
     "Scenario8": {
         "Day_Type": "Move-Out",
         "Text": "As you go through your closet, you realize you have a lot more clothes than you need. You couldn't possibly take home every single article!",
         "Options" : [
-            {"Choice1": "Throw away unwanted clothes, no one would want them anyways.", "Next": "Scenario9", "Consequence": "Wearable clothes in the trash are a waste, and they take up lots of landfill space. Someone else would love them!"},
-            {"Choice2": "Donate wearable clothes to Tommie's Closet,", "Next": "Scenario9", "Consequence": "Great choice! Tommie's Closet gives your clothes to students who can use them."},
-            {"Choice3": "Organize clothing exchange with friends.", "Next": "Scenario9", "Consequence": "Fun and free! You get new outfits and nothing gets thrown away."},
-            {"Choice4": "Go to the CreateSpace and repurpose clothing material by making an art craft or giving to createspace for other students to use.", "Next": "Scenario9", "Consequence": "Creative! Turning old clothes into art or craft supplies keeps the fabric out of the landfill."}
+            {"Choice1": "Throw away unwanted clothes, no one would want them anyways.", "score": 1, "Next": "Scenario9", "Consequence": "Wearable clothes in the trash are a waste, and they take up lots of landfill space. Someone else would love them!"},
+            {"Choice2": "Donate wearable clothes to Tommie's Closet,", "score": 5, "Next": "Scenario9", "Consequence": "Great choice! Tommie's Closet gives your clothes to students who can use them."},
+            {"Choice3": "Organize a clothing exchange with friends, or give clothes to friends who want them.", "score": 5, "Next": "Scenario9", "Consequence": "Fun and free! Your clothes go to people you know, and nothing gets thrown away."},
+            {"Choice4": "Go to the CreateSpace and repurpose clothing material by making an art craft or giving to createspace for other students to use.", "score": 4, "Next": "Scenario9", "Consequence": "Creative! Turning old clothes into art or craft supplies keeps the fabric out of the landfill."}
         ]
     },
     "Scenario9": {
         "Day_Type": "Move-Out",
         "Text": "After wiping down and srubbing every surface, you still have some cleaning products left.",
         "Options" : [
-            {"Choice1": "Dump out remnants of household products so you can reuse bottles.", "Next": "Scenario10", "Consequence": "Dumping out leftover cleaner sends chemicals down the drain, which isn't great for the water. Using it up or giving it away is better!"},
-            {"Choice2": "Offer usable products to friends or family.", "Next": "Scenario10", "Consequence": "Smart! Someone gets free cleaning supplies and nothing gets wasted."},
-            {"Choice3": "Pack everything to bring home even if you might not need it.", "Next": "Scenario10", "Consequence": "Not bad, since you'll probably use it eventually. Just skip anything you won't need so you aren't hauling around clutter."},
-            {"Choice4": "You are in a rush so just throw it away, not a big deal.", "Next": "Scenario10", "Consequence": "Cleaning products can be harmful in the trash, and it's a waste when they're still usable. Offering them to a friend takes about a minute!"}
+            {"Choice1": "Save the empty bottles and refill them with bulk soap from now on.", "score": 5, "Next": "Scenario10", "Consequence": "Great choice! Refilling bottles from a bulk container cuts down on plastic, and bulk soap usually costs less too."},
+            {"Choice2": "Offer usable products to friends or family.", "score": 4, "Next": "Scenario10", "Consequence": "Smart! Someone gets free cleaning supplies and nothing gets wasted."},
+            {"Choice3": "Pack up your cleaning supplies and use them at home.", "score": 5, "Next": "Scenario10", "Consequence": "Great choice! Using up what you already have means nothing goes to waste, and you won't need to buy more for a while."},
+            {"Choice4": "You are in a rush so just throw it away, not a big deal.", "score": 1, "Next": "Scenario10", "Consequence": "Cleaning products can be harmful in the trash, and it's a waste when they're still usable. Offering them to a friend takes about a minute!"}
         ]
     },
     "Scenario10": {
         "Day_Type": "Move-Out",
         "Text": "Now that your dorm room is cleaned out, there's just one more thing to deal with: all your notes and school supplies from this year!",
         "Options" : [
-            {"Choice1": "Throw away old notebooks and class materials, you wont need it anymore.", "Next": null, "Consequence": "Paper is easy to recycle, so the trash is a missed chance. Blank pages are still usable too!"},
-            {"Choice2": "Recycle used pages and save blank pages in notebook for future use.", "Next": null, "Consequence": "Great choice! Recycling used pages and saving the blank ones means less paper wasted."},
-            {"Choice3": "Offer books or supplies to professor for future students in that class.", "Next": null, "Consequence": "Nice! Passing on books and supplies helps future students and saves them money."},
-            {"Choice4": "Keep all notes for future reference.", "Next": null, "Consequence": "Keeping notes can help, but a year of paper adds up. Keep the useful stuff and recycle the rest."}
+            {"Choice1": "Throw away old notebooks and class materials, you wont need it anymore.", "score": 1, "Next": null, "Consequence": "Paper is easy to recycle, so the trash is a missed chance. Blank pages are still usable too!"},
+            {"Choice2": "Recycle used pages and save blank pages in notebook for future use.", "score": 5, "Next": null, "Consequence": "Great choice! Recycling used pages and saving the blank ones means less paper wasted."},
+            {"Choice3": "Offer books or supplies to professor for future students in that class.", "score": 5, "Next": null, "Consequence": "Nice! Passing on books and supplies helps future students and saves them money."},
+            {"Choice4": "Keep all notes for future reference.", "score": 5, "Next": null, "Consequence": "Keeping notes can help, but a year of paper adds up. Keep the useful stuff and recycle the rest."}
         ]
     },
     "Scenario11": {
         "Day_Type": "Sunday",
         "Text": "Today is Sunday, and you're running low on groceries.",
         "Options" : [
-            {"Choice1": "Get food from Tommie Shelf for free. It happens once a month in Iverson!", "Next": "Scenario12"},
-            {"Choice2": "Purchase from local grocers or farmer's markets.", "Next": "Scenario12"},
-            {"Choice3": "Always buy bulk, it is cheaper and less packaging.", "Next": "Scenario12"},
-            {"Choice4": "Buy individually packaged snacks since they are quick and easy.", "Next": "Scenario12"}
+            {"Choice1": "Get food from Tommie Shelf for free, and only take what you need. It happens once a month in Iverson!", "score": 5, "Next": "Scenario12", "Consequence": "Great choice! The food is free, and taking only what you need leaves enough for other students too."},
+            {"Choice2": "Bring reusable bags when you go grocery shopping.", "score": 5, "Next": "Scenario12", "Consequence": "Nice! Reusable bags keep plastic bags out of the trash, and they're sturdier for carrying groceries back to your dorm."},
+            {"Choice3": "Always buy bulk, it is cheaper and less packaging.", "score": 5, "Next": "Scenario12", "Consequence": "Smart! Buying in bulk means less packaging and usually saves money. Just make sure you'll use it all before it goes bad."},
+            {"Choice4": "Buy individually packaged snacks since they are quick and easy.", "score": 1, "Next": "Scenario12", "Consequence": "Individually wrapped snacks leave you with a pile of wrappers every week. Buy a big bag and portion it into reusable containers instead!"}
         ]
     },
     "Scenario12": {
         "Day_Type": "Sunday",
         "Text": "You've purchased all your groceries for the week. What do you do to make sure they get used before they expire?",
         "Options" : [
-            {"Choice1": "Play the Fridge Sort game to learn proper food storage.", "Next": "Scenario13"},
-            {"Choice2": "Try to eat everything quickly to avoid expiration.", "Next": "Scenario13"},
-            {"Choice3": "Freeze items that expire sooner than you would typically consume.", "Next": "Scenario13"},
-            {"Choice4": "Store food in visible areas so that you can keep accurate inventory and not forget about items.", "Next": "Scenario13"}
+            {"Choice1": "Play the Fridge Sort game to learn proper food storage.", "score": 4, "Next": "Scenario13", "Consequence": "Nice! Knowing where each food stays fresh longest helps it last until you're ready to eat it."},
+            {"Choice2": "Only buy food you know you'll actually eat.", "score": 5, "Next": "Scenario13", "Consequence": "Smart! The easiest way to avoid wasting food is not buying extra in the first place."},
+            {"Choice3": "Freeze items that expire sooner than you would typically consume.", "score": 4, "Next": "Scenario13", "Consequence": "Nice! Freezing food before it goes bad gives you a lot more time to eat it. Label it so you remember what's in there!"},
+            {"Choice4": "Store food in visible areas so that you can keep accurate inventory and not forget about items.", "score": 5, "Next": "Scenario13", "Consequence": "Great choice! When you can see your food, you remember to eat it before it goes bad."}
         ]
     },
     "Scenario13": {
         "Day_Type": "Sunday",
         "Text": "Your laundry hamper has been piling up all week. Time to wash some clothes!",
         "Options" : [
-            {"Choice1": "Wash small loads because they get more clean with less clothes.", "Next": "Scenario14"},
-            {"Choice2": "Air dry clothes overnight.", "Next": "Scenario14"},
-            {"Choice3": "Put all clothes in dryer at once to avoid multiple use.", "Next": "Scenario14"},
-            {"Choice4": "Rewear clothes after only a few wears.", "Next": "Scenario14"}
+            {"Choice1": "Wash small loads because they get more clean with less clothes.", "score": 1, "Next": "Scenario14", "Consequence": "That's a myth! Clothes get just as clean in a full load as long as the washer isn't overstuffed. Small loads use a lot more water and energy for the same amount of clothes."},
+            {"Choice2": "Air dry clothes overnight.", "score": 5, "Next": "Scenario14", "Consequence": "Great choice! Air drying uses no electricity at all, and it's easier on your clothes too."},
+            {"Choice3": "Dry full loads instead of running the dryer multiple times.", "score": 4, "Next": "Scenario14", "Consequence": "Nice! Full loads mean fewer dryer cycles and less energy. Air drying would be even better!"},
+            {"Choice4": "Only wash clothes when they're dirty instead of after every wear.", "score": 5, "Next": "Scenario14", "Consequence": "Great choice! Washing less saves water and energy, and your clothes last longer too."}
         ]
     },
     "Scenario14": {
         "Day_Type": "Sunday",
         "Text": "Your room looks like it's in need of some cleaning.",
         "Options" : [
-            {"Choice1": "Put the TV on in the background while cleaning, it is relaxing.", "Next": "Scenario15", "Consequence": "A typical TV uses between 50 and 400 watts. If you still want something to listen to, try playing music from your phone. A phone charger uses 5 to 20 watts."},
-            {"Choice2": "Save single use dishes to wash as one big load.", "Next": "Scenario15", "Consequence": "The more you can wash in a single load, the more water you save. Additionally, use a dishwasher if you can. They use significantly less water per load of dishes than handwashing."},
-            {"Choice3": "Turn on a fan all day instead of ac, since it uses less electricity.", "Next": "Scenario15", "Consequence": "Fans do use significantly less energy than the AC. Don't forget to turn it off when you leave the room!"},
-            {"Choice4": "Leave ac on consistently. It's better than turning it off and on.", "Next": "Scenario15", "Consequence": "While it may be better to constantly run the AC than turning it on and off, it's still a huge energy sink."}
+            {"Choice1": "Put the TV on in the background while cleaning, it is relaxing.", "score": 2, "Next": "Scenario15", "Consequence": "A typical TV uses between 50 and 400 watts. If you still want something to listen to, try playing music from your phone. A phone charger uses 5 to 20 watts."},
+            {"Choice2": "Save single dishes to wash together in one bigger load.", "score": 4, "Next": "Scenario15", "Consequence": "The more you can wash in a single load, the more water you save. Additionally, use a dishwasher if you can. They use significantly less water per load of dishes than handwashing."},
+            {"Choice3": "Turn on a fan all day instead of ac, since it uses less electricity.", "score": 2, "Next": "Scenario15", "Consequence": "Fans do use significantly less energy than the AC. Don't forget to turn it off when you leave the room!"},
+            {"Choice4": "Leave ac on consistently. It's better than turning it off and on.", "score": 1, "Next": "Scenario15", "Consequence": "That's a myth! Running the AC all day uses more energy than cooling your room back down later. Turn it off or up when you leave."}
         ]
     },
     "Scenario15": {
         "Day_Type": "Sunday",
-        "Text": "",
+        "Text": "Time to meal prep for the week! How will you get your cooking done?",
         "Options" : [
-            {"Choice1": "Cook several meals in the oven separateley throughout the day to prep for the week.", "Next": null},
-            {"Choice2": "Plan to cook similar meals together when practical.", "Next": null},
-            {"Choice3": "Leave oven on between baking to keep it warm.", "Next": null},
-            {"Choice4": "Use appropriately sized appliances for different meals: oven vs microwave vs air frier.", "Next": null}
+            {"Choice1": "Cook several meals in the oven separateley throughout the day to prep for the week.", "score": 2, "Next": null, "Consequence": "Heating the oven up again for every meal uses a lot of extra energy. Try baking a few things at once!"},
+            {"Choice2": "Plan to cook similar meals together when practical.", "score": 5, "Next": null, "Consequence": "Great choice! One preheat cooks several meals, so you save energy and time."},
+            {"Choice3": "Leave oven on between baking to keep it warm.", "score": 2, "Next": null, "Consequence": "An oven left on between batches is just heating an empty box. Bake things back to back so it's only on while you're using it."},
+            {"Choice4": "Use appropriately sized appliances for different meals: oven vs microwave vs air frier.", "score": 4, "Next": null, "Consequence": "Nice! Microwaves and air fryers heat up fast and use less energy than a full oven for small meals."}
         ]
     },
     "Scenario16": {
         "Day_Type": "Event",
         "Text": "You're hosting a get-together with your friends tonight! First things first: what's the plan for food?",
         "Options" : [
-            {"Choice1": "Ask everyone to bring their own snacks and take home whatever they don't finish.", "level": "mid", "Next": "Scenario17", "Consequence": "Less food gets wasted since everyone takes their leftovers home. Coordinate who brings what so you don't end up with five bags of the same chips!"},
-            {"Choice2": "Plan the menu and portions ahead of time with your guests.", "level": "mid", "Next": "Scenario17", "Consequence": "Smart planning! Knowing what people want and how much they'll eat means fewer leftovers in the trash. Pick foods with less packaging and you're all set."},
-            {"Choice3": "Buy snacks you think people might like and throw away whatever doesn't get eaten.", "level": "low", "Next": "Scenario17", "Consequence": "Guessing usually means buying too much, and tossing the extras wastes food and money. Ask what people want, or send leftovers home with your guests!"},
-            {"Choice4": "Serve food with minimal packaging, like pizza, sandwiches, or finger foods.", "level": "high", "Next": "Scenario17", "Consequence": "Great choice! Pizza, sandwiches, and finger foods are easy to share and come with barely any packaging to throw away."}
+            {"Choice1": "Ask everyone to bring their own snacks and take home whatever they don't finish.", "level": "mid", "score": 3, "Next": "Scenario17", "Consequence": "Less food gets wasted since everyone takes their leftovers home. Coordinate who brings what so you don't end up with five bags of the same chips!"},
+            {"Choice2": "Plan the menu and portions ahead of time with your guests.", "level": "mid", "score": 4, "Next": "Scenario17", "Consequence": "Smart planning! Knowing what people want and how much they'll eat means fewer leftovers in the trash. Pick foods with less packaging and you're all set."},
+            {"Choice3": "Buy snacks you think people might like and throw away whatever doesn't get eaten.", "level": "low", "score": 2, "Next": "Scenario17", "Consequence": "Guessing usually means buying too much, and tossing the extras wastes food and money. Ask what people want, or send leftovers home with your guests!"},
+            {"Choice4": "Serve food with minimal packaging, like pizza, sandwiches, or finger foods.", "level": "high", "score": 5, "Next": "Scenario17", "Consequence": "Great choice! Pizza, sandwiches, and finger foods are easy to share and come with barely any packaging to throw away."}
         ]
     },
     "Scenario17": {
         "Day_Type": "Event",
         "Text": "Your guests will need something to eat off of. What will you set out?",
         "Options" : [
-            {"Choice1": "Buy compostable or recyclable plates and utensils.", "level": "mid", "Next": "Scenario18", "Consequence": "Better than plastic, but they only help if they actually end up in a compost or recycling bin. Reusable dishes are even better!"},
-            {"Choice2": "Use your own dishes and silverware.", "level": "high", "Next": "Scenario18", "Consequence": "Great choice! Real dishes can be washed and used again and again, so nothing goes in the trash. Ask a friend to help with cleanup!"},
-            {"Choice3": "Use paper towels as plates for snacks.", "level": "mid", "Next": "Scenario18", "Consequence": "Not bad! Paper towels can go in the compost bin instead of the trash. Reusable plates are still the best option, though."},
-            {"Choice4": "Buy plastic utensils and throw them all away after. Fewer dishes to wash!", "level": "low", "Next": "Scenario18", "Consequence": "Plastic utensils get used once and then sit in a landfill for a very long time. A few minutes of washing dishes is worth it!"}
+            {"Choice1": "Buy compostable or recyclable plates and utensils.", "level": "mid", "score": 4, "Next": "Scenario18", "Consequence": "Better than plastic, but they only help if they actually end up in a compost or recycling bin. Reusable dishes are even better!"},
+            {"Choice2": "Use your own dishes and silverware.", "level": "high", "score": 5, "Next": "Scenario18", "Consequence": "Great choice! Real dishes can be washed and used again and again, so nothing goes in the trash. Ask a friend to help with cleanup!"},
+            {"Choice3": "Use paper towels as plates for snacks.", "level": "mid", "score": 4, "Next": "Scenario18", "Consequence": "Not bad! Paper towels can go in the compost bin instead of the trash. Reusable plates are still the best option, though."},
+            {"Choice4": "Buy plastic utensils and throw them all away after. Fewer dishes to wash!", "level": "low", "score": 1, "Next": "Scenario18", "Consequence": "Plastic utensils get used once and then sit in a landfill for a very long time. A few minutes of washing dishes is worth it!"}
         ]
     },
     "Scenario18": {
         "Day_Type": "Event",
         "Text": "The room feels a little plain for a party. How will you decorate?",
         "Options" : [
-            {"Choice1": "Ask friends if you can borrow their party decorations.", "level": "high", "Next": "Scenario19", "Consequence": "Great choice! Borrowed decorations are free, and nothing new has to be made or shipped. Just remember to give them back!"},
-            {"Choice2": "Order party decorations from Target on DoorDash.", "level": "low", "Next": "Scenario19", "Consequence": "Same-day delivery for decorations you'll use once means extra packaging, an extra car trip, and more stuff to toss later. Borrowing is cheaper too!"},
-            {"Choice3": "Head to the CreateSpace and craft your own decorations.", "level": "mid", "Next": "Scenario19", "Consequence": "Creative! Using craft supplies already on campus beats buying new decorations. Save them for your next party to get even more use out of them."},
-            {"Choice4": "Buy single-use party favors for everyone. They're fun!", "level": "low", "Next": "Scenario19", "Consequence": "Party favors are fun for about a minute, but most end up in the trash by the end of the night. Skip them, or pick something people will actually keep."}
+            {"Choice1": "Ask friends if you can borrow their party decorations.", "level": "high", "score": 5, "Next": "Scenario19", "Consequence": "Great choice! Borrowed decorations are free, and nothing new has to be made or shipped. Just remember to give them back!"},
+            {"Choice2": "Order party decorations from Target on DoorDash.", "level": "low", "score": 1, "Next": "Scenario19", "Consequence": "Same-day delivery for decorations you'll use once means extra packaging, an extra car trip, and more stuff to toss later. Borrowing is cheaper too!"},
+            {"Choice3": "Head to the CreateSpace and craft your own decorations.", "level": "mid", "score": 4, "Next": "Scenario19", "Consequence": "Creative! Using craft supplies already on campus beats buying new decorations. Save them for your next party to get even more use out of them."},
+            {"Choice4": "Buy single-use party favors for everyone. They're fun!", "level": "low", "score": 1, "Next": "Scenario19", "Consequence": "Party favors are fun for about a minute, but most end up in the trash by the end of the night. Skip them, or pick something people will actually keep."}
         ]
     },
     "Scenario19": {
         "Day_Type": "Event",
         "Text": "Your guests are asking how they should get to your event.",
         "Options" : [
-            {"Choice1": "Start a group chat so guests can plan carpools.", "level": "mid", "Next": "Scenario20", "Consequence": "Nice! Fewer cars means less gas and less parking stress. Suggesting walking, biking, or the bus would be even better!"},
-            {"Choice2": "Don't worry about it. How your guests get there isn't your problem.", "level": "low", "Next": "Scenario20", "Consequence": "As the host, a quick tip can make a big difference! Suggesting carpools, biking, or the bus cuts down on emissions and parking headaches."},
-            {"Choice3": "Encourage guests to walk, bike, or take the bus in your invitation.", "level": "high", "Next": "Scenario20", "Consequence": "Great choice! Walking, biking, and taking the bus cut down on car emissions, and nobody has to fight over parking."},
-            {"Choice4": "Tell everyone to drive separately. Watching them hunt for parking will be entertaining!", "level": "low", "Next": "Scenario20", "Consequence": "More cars means more emissions, more traffic, and more stressed-out guests. A carpool group chat takes two minutes to set up!"}
+            {"Choice1": "Start a group chat so guests can plan carpools.", "level": "mid", "score": 4, "Next": "Scenario20", "Consequence": "Nice! Fewer cars means less gas and less parking stress. Suggesting walking, biking, or the bus would be even better!"},
+            {"Choice2": "Don't worry about it. How your guests get there isn't your problem.", "level": "low", "score": 1, "Next": "Scenario20", "Consequence": "As the host, a quick tip can make a big difference! Suggesting carpools, biking, or the bus cuts down on emissions and parking headaches."},
+            {"Choice3": "Encourage guests to walk, bike, or take the bus in your invitation.", "level": "high", "score": 5, "Next": "Scenario20", "Consequence": "Great choice! Walking, biking, and taking the bus cut down on car emissions, and nobody has to fight over parking."},
+            {"Choice4": "Tell everyone to drive separately. Watching them hunt for parking will be entertaining!", "level": "low", "score": 1, "Next": "Scenario20", "Consequence": "More cars means more emissions, more traffic, and more stressed-out guests. A carpool group chat takes two minutes to set up!"}
         ]
     },
     "Scenario20": {
         "Day_Type": "Event",
         "Text": "Guests are about to arrive! Time to put the finishing touches on your setup.",
         "Options" : [
-            {"Choice1": "Turn on every light in the house so everyone can see.", "level": "low", "Next": null, "Consequence": "Lights in empty rooms waste electricity. Only light the spaces your guests will use, or let natural light do the work!"},
-            {"Choice2": "Set out plenty of easy-to-find recycling bins so cans and bottles don't end up in the trash.", "level": "high", "Next": null, "Consequence": "Great choice! People recycle a lot more when a bin is right in front of them. Labeling the bins helps too."},
-            {"Choice3": "Only set out trash cans. Taking out both the trash and the recycling later is too much work.", "level": "low", "Next": null, "Consequence": "Without a recycling bin, every can and bottle goes straight to the landfill. Setting out a second bin takes almost no extra effort!"},
-            {"Choice4": "Host outside during the day, or in a room with lots of natural light.", "level": "high", "Next": null, "Consequence": "Bright idea! Sunlight is free, so you won't need to run lights all evening."}
+            {"Choice1": "Turn on every light in the house so everyone can see.", "level": "low", "score": 2, "Next": null, "Consequence": "Lights in empty rooms waste electricity. Only light the spaces your guests will use, or let natural light do the work!"},
+            {"Choice2": "Set out plenty of easy-to-find recycling bins so cans and bottles don't end up in the trash.", "level": "high", "score": 5, "Next": null, "Consequence": "Great choice! People recycle a lot more when a bin is right in front of them. Labeling the bins helps too."},
+            {"Choice3": "Only set out trash cans. Taking out both the trash and the recycling later is too much work.", "level": "low", "score": 1, "Next": null, "Consequence": "Without a recycling bin, every can and bottle goes straight to the landfill. Setting out a second bin takes almost no extra effort!"},
+            {"Choice4": "Host outside during the day, or in a room with lots of natural light.", "level": "high", "score": 5, "Next": null, "Consequence": "Bright idea! Sunlight is free, so you won't need to run lights all evening."}
         ]
     }
-    
 }
