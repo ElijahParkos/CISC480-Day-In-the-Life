@@ -8,12 +8,8 @@
 const choiceHistory = [];
 
 // track choices from user by adding to choiceHistory
-function recordChoice(scenario, option) {
-    choiceHistory.push({
-        question: scenario.text,
-        choice: option.text,
-        level: option.level // undefined for now, need levels
-    });
+function recordChoice(question, choice, score) {
+    choiceHistory.push({ question: question, choice: choice, score: score });
 }
 
 // path is over when the chosen option doesn't point to another scenario
