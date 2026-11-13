@@ -53,21 +53,37 @@ function progressScenario(event) {
 }
 
 // Scoring
-let totalScore = 0;
-let scoredChoices = 0;
+let earnedPoints = 0;
+let bestPossible = 0;
+let worstPossible = 0;
 
-function scoreChoice(option) {
-    if (typeof option.score !== 'number') return; // ignore options without a score
-    totalScore = totalScore + option.score;
-    scoredChoices++;
+// returns the scores of a scenario's options as an array
+function getScores(scenario) {
+    return scenario.Options
+        .map(function (opt) { return opt.score; })
+        .filter(function (s) { return typeof s === 'number'; });
+}
+
+// call with the scenario on screen and the option the player picked
+function scoreChoice(scenario, option) {
+    if (typeof option.score !== 'number') return;
+    const scores = getScores(scenario);
+    earnedPoints = earnedPoints + option.score;
+    bestPossible = bestPossible + Math.max(...scores);
+    worstPossible = worstPossible + Math.min(...scores);
+}
+
+function getPercent() {
+    if (bestPossible === worstPossible) return 100;
+    return Math.round((earnedPoints - worstPossible) / (bestPossible - worstPossible) * 100);
 }
 
 // call when the end of a path is reached
 function getCategory() {
-    if (scoredChoices === 0) return '';
-    const average = totalScore / scoredChoices;
-    // cutoffs split the 1-5 range into thirds
-    if (average >= 3.7) return 'Positive Sustainability Impact';
-    if (average >= 2.4) return 'Neutral Sustainability Impact';
-    return 'Negative Sustainability Impact';
+    if (bestPossible === 0) return '';
+    const percent = getPercent();
+    // cutoffs split 0-100% into thirds, adjust as needed
+    if (percent >= 67) return `Most sustainable: ${percent}%`;
+    if (percent >= 34) return `Somewhat sustainable: ${percent}%`;
+    return `Least sustainable: ${percent}%`;
 }
