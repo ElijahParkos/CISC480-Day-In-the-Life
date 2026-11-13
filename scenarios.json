@@ -53,10 +53,10 @@
         "Day_Type": "Move-In",
         "Text": "",
         "Options" : [
-            {"Choice1": "5Move-In 1", "Next": null},
-            {"Choice2": "5Move-In 2", "Next": null},
-            {"Choice3": "5Move-In 3", "Next": null},
-            {"Choice4": "5Move-In 4", "Next": null}
+            {"Choice1": "5Move-In 1", "Next": "Day_Selection"},
+            {"Choice2": "5Move-In 2", "Next": "Day_Selection"},
+            {"Choice3": "5Move-In 3", "Next": "Day_Selection"},
+            {"Choice4": "5Move-In 4", "Next": "Day_Selection"}
         ]
     },
     "Scenario6": {
@@ -103,10 +103,10 @@
         "Day_Type": "Move-Out",
         "Text": "",
         "Options" : [
-            {"Choice1": "5Move-Out 1", "Next": null},
-            {"Choice2": "5Move-Out 2", "Next": null},
-            {"Choice3": "5Move-Out 3", "Next": null},
-            {"Choice4": "5Move-Out 4", "Next": null}
+            {"Choice1": "5Move-Out 1", "Next": "Day_Selection"},
+            {"Choice2": "5Move-Out 2", "Next": "Day_Selection"},
+            {"Choice3": "5Move-Out 3", "Next": "Day_Selection"},
+            {"Choice4": "5Move-Out 4", "Next": "Day_Selection"}
         ]
     },
     "Scenario11": {
@@ -153,10 +153,10 @@
         "Day_Type": "Sunday",
         "Text": "",
         "Options" : [
-            {"Choice1": "5Sunday 1", "Next": null},
-            {"Choice2": "5Sunday 2", "Next": null},
-            {"Choice3": "5Sunday 3", "Next": null},
-            {"Choice4": "5Sunday 4", "Next": null}
+            {"Choice1": "5Sunday 1", "Next": "Day_Selection"},
+            {"Choice2": "5Sunday 2", "Next": "Day_Selection"},
+            {"Choice3": "5Sunday 3", "Next": "Day_Selection"},
+            {"Choice4": "5Sunday 4", "Next": "Day_Selection"}
         ]
     }
     
