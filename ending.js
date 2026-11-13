@@ -8,8 +8,8 @@
 const choiceHistory = [];
 
 // track choices from user by adding to choiceHistory
-function recordChoice(question, choice, score, best) {
-    choiceHistory.push({ question: question, choice: choice, score: score, best: best });
+function recordChoice(question, choice, score, best, consequence) {
+    choiceHistory.push({ question: question, choice: choice, score: score, best: best, consequence: consequence || '' });
 }
 
 // path is over when the chosen option doesn't point to another scenario
@@ -37,7 +37,7 @@ function showEndingSummary(rankText) {
     content.className = 'textbox';
 
     const heading = document.createElement('h1');
-    heading.textContent = 'Your day in review';
+    heading.textContent = `Your Day in Review`;
     content.appendChild(heading);
 
     if (rankText) {
@@ -45,6 +45,15 @@ function showEndingSummary(rankText) {
         rank.textContent = rankText;
         content.appendChild(rank);
     }
+
+    const section_heading = document.createElement('h3');
+    if (getDayType() == 'Sunday') {
+        section_heading.textContent  = 'So how was your Sunday?'
+    } else {
+        section_heading.textContent  = `So how was your ${getDayType()} Day?`
+    }
+    
+    content.appendChild(section_heading);
 
     // list choices per scenario
     const list = document.createElement('ol');
@@ -57,8 +66,13 @@ function showEndingSummary(rankText) {
         const choice = document.createElement('p');
         choice.textContent = `You chose: ${entry.choice}`;
 
+        const consequence = document.createElement('p');
+        consequence.textContent = `Remember: ${entry.consequence}`;
+
         item.appendChild(question);
         item.appendChild(choice);
+        item.appendChild(consequence);
+
 
         if (entry.score !== undefined) {
             const score = document.createElement('p');
@@ -69,6 +83,11 @@ function showEndingSummary(rankText) {
         list.appendChild(item);
     });
     content.appendChild(list);
+
+    const comment = document.createElement(`h2`);
+    comment.textContent = getComment();
+    content.appendChild(comment);
+
 
     const playAgain = document.createElement('button');
     playAgain.className = 'choice-btn';

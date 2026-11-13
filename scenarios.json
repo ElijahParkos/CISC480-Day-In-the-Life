@@ -6,7 +6,7 @@
             {"Choice1": "Today is Move-In Day!", "Next": "Scenario1"},
             {"Choice2": "Today is Move-Out Day!", "Next": "Scenario6"},
             {"Choice3": "Today is a regular Sunday-reset day!", "Next": "Scenario11"},
-            {"Choice4": "Today you're hosting an event!", "Next": "Scenario16"}
+            {"Choice4": "Today is the day you're throwing a party!", "Next": "Scenario16"}
         ]
     },
     "Scenario1": { 

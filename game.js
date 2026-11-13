@@ -43,7 +43,7 @@ function progressScenario(event) {
     // skip the day selection screen so it isn't scored or listed in the summary
     if (current !== scenarios.Start) {
         const best = Math.max(...getScores(scenario));
-        recordChoice(scenario.Text, option['Choice' + (i + 1)], option.score, best);
+        recordChoice(scenario.Text, option['Choice' + (i + 1)], option.score, best, option.Consequence);
         scoreChoice(scenario, option);
     }
 
@@ -85,10 +85,21 @@ function getCategory() {
     if (bestPossible === 0) return '';
     const percent = getPercent();
     // cutoffs split 0-100% into thirds, adjust as needed
-    if (percent >= 67) return `Most sustainable: ${percent}%`;
-    if (percent >= 34) return `Somewhat sustainable: ${percent}%`;
-    return `Least sustainable: ${percent}%`;
+    if (percent >= 67) return `Most Sustainable: ${percent}%`;
+    if (percent >= 34) return `Somewhat Sustainable: ${percent}%`;
+    return `Least Sustainable: ${percent}%`;
 }
+
+// temp for ending screen
+function getComment() {
+    if (bestPossible === 0) return '';
+    const percent = getPercent();
+    // cutoffs split 0-100% into thirds, adjust as needed
+    if (percent >= 67) return 'Great job acting sustainably!';
+    if (percent >= 34) return 'Keep up the good work, and keep learning about sustainable actions you can take in your day!';
+    return 'Your actions could be more sustainable, so keep learning about sustainable actions you can take in your day!';
+}
+
 function showConsequence(selected_option) {
     const consequence_text = document.querySelector('#consequence');
     const option = scenarios[current].Options[selected_option];
@@ -101,4 +112,8 @@ function showConsequence(selected_option) {
 function closeConsequence() {
     const dialog = document.querySelector('dialog');
     dialog.close();
+}
+
+function getDayType() {
+    return scenarios[current].Day_Type || '';
 }
