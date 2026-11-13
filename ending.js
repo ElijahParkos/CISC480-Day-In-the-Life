@@ -8,12 +8,8 @@
 const choiceHistory = [];
 
 // track choices from user by adding to choiceHistory
-function recordChoice(scenario, option) {
-    choiceHistory.push({
-        question: scenario.text,
-        choice: option.text,
-        level: option.level // undefined for now, need levels
-    });
+function recordChoice(question, choice, score, best) {
+    choiceHistory.push({ question: question, choice: choice, score: score, best: best });
 }
 
 // path is over when the chosen option doesn't point to another scenario
@@ -52,7 +48,7 @@ function showEndingSummary(rankText) {
 
     // list choices per scenario
     const list = document.createElement('ol');
-    choiceHistory.forEach(function (entry) {
+        choiceHistory.forEach(function (entry) {
         const item = document.createElement('li');
 
         const question = document.createElement('p');
@@ -63,6 +59,13 @@ function showEndingSummary(rankText) {
 
         item.appendChild(question);
         item.appendChild(choice);
+
+        if (entry.score !== undefined) {
+            const score = document.createElement('p');
+            score.textContent = `Score: ${entry.score}/${entry.best}`;
+            item.appendChild(score);
+        }
+
         list.appendChild(item);
     });
     content.appendChild(list);
@@ -81,14 +84,3 @@ function showEndingSummary(rankText) {
     endingScreen.appendChild(content);
     document.querySelector('main').appendChild(endingScreen);
 }
-
-// temporary placeholder until scenarios.json is filled in
-// right now assume end after 5 choices
-const length = 5;
-const endingTextbox = document.getElementById('textbox');
-
-document.querySelectorAll('.choice-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-        recordChoice({ text: endingTextbox.textContent }, { text: btn.textContent });
-    });
-});

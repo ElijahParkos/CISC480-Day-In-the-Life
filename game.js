@@ -35,10 +35,18 @@ function showScenario(id) {
 
 function progressScenario(event) {
     const i = Number(event.target.id.replace('choice', '')) - 1;
-    showConsequence(i);
-    const option = scenarios[current].Options[i];
+    const scenario = scenarios[current];
+    const option = scenario.Options[i];
 
-    scoreChoice(option);
+    showConsequence(i);
+
+    // skip the day selection screen so it isn't scored or listed in the summary
+    if (current !== scenarios.Start) {
+        const best = Math.max(...getScores(scenario));
+        recordChoice(scenario.Text, option['Choice' + (i + 1)], option.score, best);
+        scoreChoice(scenario, option);
+    }
+
     if (option.Next) {
         showScenario(option.Next);
     } else {
@@ -47,25 +55,40 @@ function progressScenario(event) {
 }
 
 // Scoring
-// Score keeper for each level of sustainability
-let counts = { low: 0, mid: 0, high: 0 };
+let earnedPoints = 0;
+let bestPossible = 0;
+let worstPossible = 0;
 
-// call with the option the player picked
-function scoreChoice(option) {
-    counts[option.level]++;
+// returns the scores of a scenario's options as an array
+function getScores(scenario) {
+    return scenario.Options
+        .map(function (opt) { return opt.score; })
+        .filter(function (s) { return typeof s === 'number'; });
+}
+
+// call with the scenario on screen and the option the player picked
+function scoreChoice(scenario, option) {
+    if (typeof option.score !== 'number') return;
+    const scores = getScores(scenario);
+    earnedPoints = earnedPoints + option.score;
+    bestPossible = bestPossible + Math.max(...scores);
+    worstPossible = worstPossible + Math.min(...scores);
+}
+
+function getPercent() {
+    if (bestPossible === worstPossible) return 100;
+    return Math.round((earnedPoints - worstPossible) / (bestPossible - worstPossible) * 100);
 }
 
 // call when the end of a path is reached
 function getCategory() {
-    const answered = counts.low + counts.mid + counts.high;
-    if (answered === 0) return '';
-    const average = (counts.low * 1 + counts.mid * 2 + counts.high * 3) / answered;
-    // category names can be changed when and cutoffs can be adjusted
-    if (average >= 2.4) return 'Most sustainable';
-    if (average >= 1.6) return 'Somewhat sustainable';
-    return 'Least sustainable';
+    if (bestPossible === 0) return '';
+    const percent = getPercent();
+    // cutoffs split 0-100% into thirds, adjust as needed
+    if (percent >= 67) return `Most sustainable: ${percent}%`;
+    if (percent >= 34) return `Somewhat sustainable: ${percent}%`;
+    return `Least sustainable: ${percent}%`;
 }
-
 function showConsequence(selected_option) {
     const consequence_text = document.querySelector('#consequence');
     const option = scenarios[current].Options[selected_option];
