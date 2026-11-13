@@ -8,13 +8,8 @@
 const choiceHistory = [];
 
 // track choices from user by adding to choiceHistory
-function recordChoice(scenario, option, consequence) {
-    choiceHistory.push({
-        question: scenario.text,
-        choice: option.text,
-        level: option.level,
-        consequence: consequence.text || ''
-    });
+function recordChoice(question, choice, score, best, consequence) {
+    choiceHistory.push({ question: question, choice: choice, score: score, best: best, consequence: consequence || '' });
 }
 
 // path is over when the chosen option doesn't point to another scenario
@@ -42,7 +37,7 @@ function showEndingSummary(rankText) {
     content.className = 'textbox';
 
     const heading = document.createElement('h1');
-    heading.textContent = 'Your day in review:';
+    heading.textContent = `Your Day in Review`;
     content.appendChild(heading);
 
     if (rankText) {
@@ -52,11 +47,17 @@ function showEndingSummary(rankText) {
     }
 
     const section_heading = document.createElement('h3');
-    section_heading.textContent = 'So how was your day?';
+    if (getDayType() == 'Sunday') {
+        section_heading.textContent  = 'So how was your Sunday?'
+    } else {
+        section_heading.textContent  = `So how was your ${getDayType()} Day?`
+    }
+    
     content.appendChild(section_heading);
+
     // list choices per scenario
     const list = document.createElement('ol');
-    choiceHistory.forEach(function (entry) {
+        choiceHistory.forEach(function (entry) {
         const item = document.createElement('li');
 
         const question = document.createElement('p');
@@ -66,14 +67,27 @@ function showEndingSummary(rankText) {
         choice.textContent = `You chose: ${entry.choice}`;
 
         const consequence = document.createElement('p');
-        consequence.textContent = `${entry.consequence}`;
+        consequence.textContent = `Remember: ${entry.consequence}`;
 
         item.appendChild(question);
         item.appendChild(choice);
         item.appendChild(consequence);
+
+
+        if (entry.score !== undefined) {
+            const score = document.createElement('p');
+            score.textContent = `Score: ${entry.score}/${entry.best}`;
+            item.appendChild(score);
+        }
+
         list.appendChild(item);
     });
     content.appendChild(list);
+
+    const comment = document.createElement(`h2`);
+    comment.textContent = getComment();
+    content.appendChild(comment);
+
 
     const playAgain = document.createElement('button');
     playAgain.className = 'choice-btn';
@@ -89,22 +103,3 @@ function showEndingSummary(rankText) {
     endingScreen.appendChild(content);
     document.querySelector('main').appendChild(endingScreen);
 }
-
-// temporary placeholder until scenarios.json is filled in
-// right now assume end after 5 choices
-const length = 5;
-const endingTextbox = document.getElementById('textbox');
-
-document.querySelectorAll('.choice-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-        const i = Number(event.target.id.replace('choice', '')) - 1;
-        const data = scenarios[current].Options[i];
-        recordChoice({ text: endingTextbox.textContent }, { text: btn.textContent }, {text: data.Consequence});
-
-
-        const ending_category = getCategory()
-        if (choiceHistory.length >= length) {
-            showEndingSummary(ending_category);
-        }
-    });
-});

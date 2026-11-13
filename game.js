@@ -1,5 +1,3 @@
-// TODO: Pull scenarios from scenarios.json file
-
 const textbox = document.getElementById('textbox');
 const choice1_btn = document.getElementById('choice1');
 const choice2_btn = document.getElementById('choice2');
@@ -10,6 +8,9 @@ choice1_btn.addEventListener('click', progressScenario);
 choice2_btn.addEventListener('click', progressScenario);
 choice3_btn.addEventListener('click', progressScenario);
 choice4_btn.addEventListener('click', progressScenario);
+
+const close_popup_btn = document.getElementById('close-popup');
+close_popup_btn.addEventListener('click', closeConsequence);
 
 let scenarios = {};   // loaded from scenarios.json
 let current = null;   // id of the scenario on screen
@@ -34,41 +35,70 @@ function showScenario(id) {
 
 function progressScenario(event) {
     const i = Number(event.target.id.replace('choice', '')) - 1;
-    const option = scenarios[current].Options[i];
+    const scenario = scenarios[current];
+    const option = scenario.Options[i];
 
-    scoreChoice(option);
+    showConsequence(i);
+
+    // skip the day selection screen so it isn't scored or listed in the summary
+    if (current !== scenarios.Start) {
+        const best = Math.max(...getScores(scenario));
+        recordChoice(scenario.Text, option['Choice' + (i + 1)], option.score, best, option.Consequence);
+        scoreChoice(scenario, option);
+    }
+
     if (option.Next) {
         showScenario(option.Next);
     } else {
-        textbox.textContent = getCategory();
+        showEndingSummary(getCategory());
     }
 }
 
 // Scoring
-// Score keeper for each level of sustainability
-// let counts = { low: 0, low_mid: 0, mid: 0, high_mid: 0, high: 0 };
-scores = []
+let earnedPoints = 0;
+let bestPossible = 0;
+let worstPossible = 0;
 
-// call with the option the player picked
-function scoreChoice(option) {
-    // counts[option.level]++;
-    scores.push(option.level)
+// returns the scores of a scenario's options as an array
+function getScores(scenario) {
+    return scenario.Options
+        .map(function (opt) { return opt.score; })
+        .filter(function (s) { return typeof s === 'number'; });
+}
+
+// call with the scenario on screen and the option the player picked
+function scoreChoice(scenario, option) {
+    if (typeof option.score !== 'number') return;
+    const scores = getScores(scenario);
+    earnedPoints = earnedPoints + option.score;
+    bestPossible = bestPossible + Math.max(...scores);
+    worstPossible = worstPossible + Math.min(...scores);
+}
+
+function getPercent() {
+    if (bestPossible === worstPossible) return 100;
+    return Math.round((earnedPoints - worstPossible) / (bestPossible - worstPossible) * 100);
 }
 
 // call when the end of a path is reached
 function getCategory() {
-    // const answered = counts.low + counts.low_mid + counts.mid + counts.high_mid + counts.high;
-    // if (answered === 0) return '';
-    // const average = (counts.low * 1 + counts.low_mid * 2 + counts.mid * 3 + counts.high_mid * 4 + counts.high * 5) / answered;
-    const sum = scores.reduce((x, y) => x + y, 0);
-    const average = sum / scores.length;
-
-    // category names can be changed when and cutoffs can be adjusted
-    if (average >= 3.4) return 'Great job acting sustainably!';
-    if (average >= 1.7) return 'Keep up the good work, and keep learning about sustainable actions you can take in your day!';
-    return 'Your actions could be more sustainable, so keep learning about sustainable actions you can take in your day!';
+    if (bestPossible === 0) return '';
+    const percent = getPercent();
+    // cutoffs split 0-100% into thirds, adjust as needed
+    if (percent >= 67) return `Most Sustainable: ${percent}%`;
+    if (percent >= 34) return `Somewhat Sustainable: ${percent}%`;
+    return `Least Sustainable: ${percent}%`;
 }
 
+// temp for ending screen
+function getComment() {
+    if (bestPossible === 0) return '';
+    const percent = getPercent();
+    // cutoffs split 0-100% into thirds, adjust as needed
+    if (percent >= 67) return 'Great job acting sustainably!';
+    if (percent >= 34) return 'Keep up the good work, and keep learning about sustainable actions you can take in your day!';
+    return 'Your actions could be more sustainable, so keep learning about sustainable actions you can take in your day!';
+}
 
 function showConsequence(selected_option) {
     const consequence_text = document.querySelector('#consequence');
@@ -82,4 +112,8 @@ function showConsequence(selected_option) {
 function closeConsequence() {
     const dialog = document.querySelector('dialog');
     dialog.close();
+}
+
+function getDayType() {
+    return scenarios[current].Day_Type || '';
 }
