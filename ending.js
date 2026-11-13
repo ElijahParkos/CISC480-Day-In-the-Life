@@ -8,11 +8,12 @@
 const choiceHistory = [];
 
 // track choices from user by adding to choiceHistory
-function recordChoice(scenario, option) {
+function recordChoice(scenario, option, consequence) {
     choiceHistory.push({
         question: scenario.text,
         choice: option.text,
-        level: option.level // undefined for now, need levels
+        level: option.level,
+        consequence: consequence.text || ''
     });
 }
 
@@ -41,7 +42,7 @@ function showEndingSummary(rankText) {
     content.className = 'textbox';
 
     const heading = document.createElement('h1');
-    heading.textContent = 'Your day in review';
+    heading.textContent = 'Your day in review:';
     content.appendChild(heading);
 
     if (rankText) {
@@ -50,6 +51,9 @@ function showEndingSummary(rankText) {
         content.appendChild(rank);
     }
 
+    const section_heading = document.createElement('h3');
+    section_heading.textContent = 'So how was your day?';
+    content.appendChild(section_heading);
     // list choices per scenario
     const list = document.createElement('ol');
     choiceHistory.forEach(function (entry) {
@@ -61,8 +65,12 @@ function showEndingSummary(rankText) {
         const choice = document.createElement('p');
         choice.textContent = `You chose: ${entry.choice}`;
 
+        const consequence = document.createElement('p');
+        consequence.textContent = `${entry.consequence}`;
+
         item.appendChild(question);
         item.appendChild(choice);
+        item.appendChild(consequence);
         list.appendChild(item);
     });
     content.appendChild(list);
@@ -89,10 +97,14 @@ const endingTextbox = document.getElementById('textbox');
 
 document.querySelectorAll('.choice-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
-        recordChoice({ text: endingTextbox.textContent }, { text: btn.textContent });
+        const i = Number(event.target.id.replace('choice', '')) - 1;
+        const data = scenarios[current].Options[i];
+        recordChoice({ text: endingTextbox.textContent }, { text: btn.textContent }, {text: data.Consequence});
 
+
+        const ending_category = getCategory()
         if (choiceHistory.length >= length) {
-            showEndingSummary();
+            showEndingSummary(ending_category);
         }
     });
 });

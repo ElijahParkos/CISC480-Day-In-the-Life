@@ -46,20 +46,40 @@ function progressScenario(event) {
 
 // Scoring
 // Score keeper for each level of sustainability
-let counts = { low: 0, mid: 0, high: 0 };
+// let counts = { low: 0, low_mid: 0, mid: 0, high_mid: 0, high: 0 };
+scores = []
 
 // call with the option the player picked
 function scoreChoice(option) {
-    counts[option.level]++;
+    // counts[option.level]++;
+    scores.push(option.level)
 }
 
 // call when the end of a path is reached
 function getCategory() {
-    const answered = counts.low + counts.mid + counts.high;
-    if (answered === 0) return '';
-    const average = (counts.low * 1 + counts.mid * 2 + counts.high * 3) / answered;
+    // const answered = counts.low + counts.low_mid + counts.mid + counts.high_mid + counts.high;
+    // if (answered === 0) return '';
+    // const average = (counts.low * 1 + counts.low_mid * 2 + counts.mid * 3 + counts.high_mid * 4 + counts.high * 5) / answered;
+    const sum = scores.reduce((x, y) => x + y, 0);
+    const average = sum / scores.length;
+
     // category names can be changed when and cutoffs can be adjusted
-    if (average >= 2.4) return 'Most sustainable';
-    if (average >= 1.6) return 'Somewhat sustainable';
-    return 'Least sustainable';
+    if (average >= 3.4) return 'Great job acting sustainably!';
+    if (average >= 1.7) return 'Keep up the good work, and keep learning about sustainable actions you can take in your day!';
+    return 'Your actions could be more sustainable, so keep learning about sustainable actions you can take in your day!';
+}
+
+
+function showConsequence(selected_option) {
+    const consequence_text = document.querySelector('#consequence');
+    const option = scenarios[current].Options[selected_option];
+    if(!("Consequence" in option)) return;
+    consequence_text.textContent = option.Consequence;
+    const dialog = document.querySelector('dialog');
+    dialog.showModal();
+}
+
+function closeConsequence() {
+    const dialog = document.querySelector('dialog');
+    dialog.close();
 }
