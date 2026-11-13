@@ -89,3 +89,16 @@ function getCategory() {
     if (percent >= 34) return `Somewhat sustainable: ${percent}%`;
     return `Least sustainable: ${percent}%`;
 }
+function showConsequence(selected_option) {
+    const consequence_text = document.querySelector('#consequence');
+    const option = scenarios[current].Options[selected_option];
+    if(!("Consequence" in option)) return;
+    consequence_text.textContent = option.Consequence;
+    const dialog = document.querySelector('dialog');
+    dialog.showModal();
+}
+
+function closeConsequence() {
+    const dialog = document.querySelector('dialog');
+    dialog.close();
+}
