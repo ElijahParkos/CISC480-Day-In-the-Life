@@ -21,39 +21,43 @@ function isEndOfPath(option) {
 // display choices the player made
 // also can put scoring feedback and results info here
 function showEndingSummary(rankText) {
-    if (document.getElementById('ending-screen')) return;
+    //if (document.getElementById('ending-screen')) return;
 
     // hide the scenario text and the choice buttons
     document.querySelector('.text-container').style.display = 'none';
     document.querySelector('.choice-container').style.display = 'none';
 
     // make matching
-    const endingScreen = document.createElement('div');
-    endingScreen.id = 'ending-screen';
+    const endingScreen = document.querySelector('#ending-screen');
+    // endingScreen.id = 'ending-screen';
+    endingScreen.style.display = 'block';
     endingScreen.className = 'text-container';
     endingScreen.style.overflowY = 'auto'; 
 
     const content = document.createElement('div');
     content.className = 'textbox';
 
-    const heading = document.createElement('h1');
-    heading.textContent = `Your Day in Review`;
-    content.appendChild(heading);
+    const section_heading = document.createElement('h2');
+    section_heading.style.textAlign = 'center';
+    if (getDayType() == 'Sunday') {
+        section_heading.textContent  = 'How was your Sunday?'
+    } else {
+        section_heading.textContent  = `How was your ${getDayType()} Day?`
+    }
+    
+    content.appendChild(section_heading);
+
 
     if (rankText) {
-        const rank = document.createElement('h2');
+        const rank = document.createElement('h3');
+        rank.style.textAlign = 'center';
         rank.textContent = rankText;
         content.appendChild(rank);
     }
 
-    const section_heading = document.createElement('h3');
-    if (getDayType() == 'Sunday') {
-        section_heading.textContent  = 'So how was your Sunday?'
-    } else {
-        section_heading.textContent  = `So how was your ${getDayType()} Day?`
-    }
-    
-    content.appendChild(section_heading);
+    const list_header = document.createElement('h3');
+    list_header.textContent = "Let's take a closer look:";
+    content.appendChild(list_header);
 
     // list choices per scenario
     const list = document.createElement('ol');
@@ -84,9 +88,14 @@ function showEndingSummary(rankText) {
     });
     content.appendChild(list);
 
+    const comment_container = document.createElement('div');
+    comment_container.style.display = 'flex';
+    comment_container.style.flexDirection = 'column';
+    comment_container.style.alignItems = 'center';
     const comment = document.createElement(`h2`);
     comment.textContent = getComment();
-    content.appendChild(comment);
+    comment.style.textAlign = 'center';
+    comment_container.appendChild(comment);
 
 
     const playAgain = document.createElement('button');
@@ -94,12 +103,15 @@ function showEndingSummary(rankText) {
     
     playAgain.style.height = 'auto';
     playAgain.style.padding = '1em';
+    playAgain.style.width = '150px';
+    playAgain.style.textAlign = 'center';
     playAgain.textContent = 'Play again';
+    playAgain.style.minHeight = '0px';
     playAgain.addEventListener('click', function () {
         location.reload();
     });
-    content.appendChild(playAgain);
-
+    comment_container.appendChild(playAgain);
+    content.appendChild(comment_container);
     endingScreen.appendChild(content);
-    document.querySelector('main').appendChild(endingScreen);
+    document.querySelector('.banner').appendChild(endingScreen);
 }

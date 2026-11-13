@@ -10,9 +10,21 @@
 </head>
 <body>
     <main>
-        <div class="text-container">
-            <p id="textbox">Scenario 1</p>
+        <div class="banner">
+            <div class="top-row">
+                <img src="images/sustainablesmallcrestlogoai.png" id="logo">
+                <h1 class="title">A Day in the Life</h1>
+            </div>
+
+            <div class="text-container">
+                <p id="textbox">Scenario 1</p>
+            </div>
+
+            <div id="ending-screen" style="display: none;">
+
+            </div>
         </div>
+
         <div class="choice-container">
             <button class="choice-btn" id="choice1">Choice 1</button>
             <button class="choice-btn" id="choice2">Choice 2</button>
@@ -24,7 +36,7 @@
     <dialog>
         <div id="popup">
             <p id="consequence"></p>
-            <button id="close-popup">Close</button>
+            <button id="close-popup" class="choice-btn">Close</button>
         </div>
     </dialog>
 </body>

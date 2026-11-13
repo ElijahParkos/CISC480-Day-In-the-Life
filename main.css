@@ -1,46 +1,185 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url("fonts/AvenirNextRegular.woff2") format("woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url("fonts/AvenirNextBold.woff2") format("woff2");
+    font-weight: bold;
+}
+
+:root {
+    --palette-white: #FFFFFF;
+    --palette-black: #000000;
+    --palette-green: #4c9c2e; 
+    --palette-purple: #510c76;
+    --palette-light-gray: #dddedf;
+    --palette-dark-gray: #b2b5b7;
+
+    --semi-transparent-background: color-mix(in srgb, var(--palette-white) 75%, transparent);
+    --modal-background: color-mix(in srgb, var(--palette-black) 60%, transparent);
+    --border-shadow: 0 4px 8px color-mix(in srgb, var(--palette-white) 50%, var(--palette-black));
+}
+
 body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Avenir';
+    background-image: url("images/background1.jpg");
+    background-attachment: fixed;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    background-color: black;
-    color: white;
-}
-
-.text-container {
-    flex: 1;
-    background-color: darkslategray;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    
-}
-
-.choice-container {
-    display: flex;
-    flex-direction: column;
-    flex: 2;
-    background-color: dimgrey;
+    justify-content: space-between;
+    gap: 10px;
     align-items: center;
 }
 
+.banner {
+    background-color: var(--semi-transparent-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 100%;
+}
+
+.text-container {
+    background-color: var(--palette-white);
+    justify-content: center;
+    width: 95%;
+    border-radius: 15px;
+    font-size: 18pt;
+    text-align: left;
+    box-shadow: var(--border-shadow);
+}
+
+#textbox {
+    padding: 10px 25px;
+}
+
+.choice-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: var(--semi-transparent-background);
+    border-radius: 15px;
+    margin-bottom: 25px;
+    width: 95%;
+    gap: 20px;
+    padding: 20px;
+}
+
 .choice-btn {
-    background-color: white;
-    width: 80%;
-    height: 100%;
+    background-color: var(--palette-white);
+    width: 100%;
+    min-height: 100px;
     cursor: pointer;
+    font: inherit;
+    border-radius: 15px;
+    border: none;
+    font-size: 16pt;
+    text-align: left;
+    padding: 10px 25px;
+    box-shadow: var(--border-shadow);
+    transition: all 0.15s ease;
+}
+
+.choice-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 12px color-mix(in srgb, var(--palette-white) 50%, var(--palette-black));;
 }
 
 .choice-btn:active {
-    background-color: #EEEEEE;
+    transition: none;
+    transform: translateY(1px);
+    box-shadow: var(--border-shadow);
 }
 
-.textbox {
-    width: 80%;
+.top-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#logo {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.title {
+    color: var(--palette-green);
+    font-size: 18pt;
+}
+
+dialog {
+    transform: scale(0.95);
+    opacity: 0;
+    background-color: var(--palette-white);
+    border-radius: 15px;
+    text-align: left;
+    font-size: 16pt;
+    width: 95%;
+    border: none;
+}
+
+dialog[open] {
+    animation: modal-open 0.2s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+@keyframes modal-open {
+    0% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    99% {
+        transform: scale(1.005);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+dialog::backdrop {
+    background-color: transparent;
+    transition:
+        background-color 0.2s ease;
+}
+
+dialog[open]::backdrop {
+    background-color: var(--modal-background);
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        background-color: transparent;
+    }
+}
+
+#close-popup {
+    width: auto;
+    border-radius: 15px;
+    padding: 8px 12px;
+    min-height: 0px;
+}
+
+#ending-screen {
+    padding: 20px;
 }
