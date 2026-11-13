@@ -85,9 +85,9 @@ function getCategory() {
     if (bestPossible === 0) return '';
     const percent = getPercent();
     // cutoffs split 0-100% into thirds, adjust as needed
-    if (percent >= 67) return `Most Sustainable: ${percent}%`;
-    if (percent >= 34) return `Somewhat Sustainable: ${percent}%`;
-    return `Least Sustainable: ${percent}%`;
+    if (percent >= 67) return `Very Sustainable (${percent}%)`;
+    if (percent >= 34) return `Somewhat Sustainable (${percent}%)`;
+    return `Not Very Sustainable (${percent}%)`;
 }
 
 // temp for ending screen
